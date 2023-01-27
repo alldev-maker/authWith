@@ -3,39 +3,62 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import InputLabel from '@mui/material/InputLabel';
-import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
+import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "./styled/styled";
+import Confirm from "./Confirm";
 
-export default function SignIn() {
+export default function Signup({ setUser }) {
+  const [tempUser, setTempUser] = React.useState(null)
+  const [country, setCountry] = React.useState('Select a Country')
+  const handleSetCountry = (event) => {
+    setCountry(event.target.value)
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const { email, fName, lName, password, company } = event.target.elements
+    const data = {
+      email: email.value,
+      fName: fName.value,
+      lName: lName.value,
+      password: password.value,
+      company: company.value,
+      country: country
+    }
+    setTempUser(data)
+    console.log(tempUser)
   };
+  return (
+    <>
+      {tempUser ? <Confirm setUser={setUser} tempUser={tempUser} /> : <SignUpTemp handleSubmit={handleSubmit} handleSetCountry={handleSetCountry} country={country} />}
+    </>
+  );
+}
+
+function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
   const [showPassword, setShowPassword] = React.useState(false);
+  const countries = ['Ukraine', 'Russia', 'United Kingdom', 'United States', 'Spain']
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }} spacing={0} style={{ maxWidth: '1512px', margin: '0 auto' }}>
+      <Grid container component="main" sx={{ height: '100vh' }} spacing={3} style={{ maxWidth: '1512px', margin: '0 auto' }}>
         <Grid
           item
           xs={false}
@@ -52,10 +75,10 @@ export default function SignIn() {
           }}
         >
           <div className={style.greetingTypo}>
-            <Typography component="h1" variant="h4" style={{ fontSize: '26px', color: 'white', paddingBottom: '13.6px' }}>
+            <Typography component="h1" variant="h4" style={{ marginLeft: '-15px', fontSize: '26px', color: 'white', paddingBottom: '13.6px' }}>
               Create an <span>AuthWith</span> account
             </Typography>
-            <Typography component="h1" variant="h5" style={{ fontSize: '15px', color: '#E2DEF7' }}>
+            <Typography component="h1" variant="h5" style={{ marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7' }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </div>
@@ -70,10 +93,10 @@ export default function SignIn() {
               alignItems: 'left',
             }}
           >
-            <Typography style={{ marginLeft: '-15px', marginBottom: '35px' }}>Already have an AuthWith account? <Link href="/index" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
+            <Typography style={{ marginLeft: '-15px', marginBottom: '35px' }}>Already have an AuthWith account? <Link href="/login" style={{ color: 'green', textDecoration: 'none' }}>log in here</Link></Typography>
 
             <Typography component="h1" variant="h4" style={{ marginLeft: '-15px' }}>
-              Sign in
+              Sign up
             </Typography>
             <div className={style.avatar}>
               <Avatar sx={{ m: 1, color: '#3F3F3F', background: 'white', marginLeft: '-20px' }}>
@@ -84,11 +107,29 @@ export default function SignIn() {
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}  >
               <Grid container spacing={2} >
                 <Grid xs={12}>
-                  <FormControl variant="standard" style={{ width: '100%', marginBottom: '35px' }}>
+                  <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="email">
                       Business Email Address
                     </InputLabel>
-                    <BootstrapInput placeholder="loemipsum@gmail.com" id="email" style={{ width: '100%' }} />
+                    <BootstrapInput placeholder="loemipsum@gmail.com" id="email" type="email" style={{ width: '100%' }} />
+                  </FormControl>
+                </Grid>
+                <Grid xs={12} sm={6} style={{ marginBottom: '35px' }}>
+                  <FormControl variant="standard" style={{
+                    width: '96%',
+                  }}>
+                    <InputLabel shrink htmlFor="fName">
+                      First Name
+                    </InputLabel>
+                    <BootstrapInput placeholder="Jonny" id="fName" />
+                  </FormControl>
+                </Grid>
+                <Grid xs={12} sm={6}>
+                  <FormControl variant="standard" style={{ width: '100%' }}>
+                    <InputLabel shrink htmlFor="lName">
+                      Last Name
+                    </InputLabel>
+                    <BootstrapInput placeholder="Welings" id="lName" />
                   </FormControl>
                 </Grid>
                 <Grid xs={12}>
@@ -109,6 +150,7 @@ export default function SignIn() {
                     </InputLabel>
                     <OutlinedInput
                       id="password"
+                      style={{ height: '49px' }}
                       type={showPassword ? 'text' : 'password'}
                       endAdornment={
                         <InputAdornment position="end">
@@ -126,7 +168,41 @@ export default function SignIn() {
                     />
                   </FormControl>
                 </Grid>
+                <Grid xs={12} sm={6}>
+                  <FormControl sx={{ mt: 3 }} style={{ width: '96%' }}>
+                    <Select
+                      displayEmpty
+                      value={country}
+                      onChange={handleSetCountry}
+                      input={<OutlinedInput />}
+                      style={{ height: '47px', background: '#F2F2F2', color: '#7E7E7E' }}
+
+                      inputProps={{ 'aria-label': 'Without label' }}
+                    >
+                      <MenuItem disabled value="">
+                        <em>Select a Country</em>
+                      </MenuItem>
+                      {countries.map((country) => (
+                        <MenuItem
+                          key={country}
+                          value={country}
+                        >
+                          {country}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                </Grid>
+                <Grid xs={12} sm={6}>
+                  <FormControl variant="standard" style={{ width: '100%' }}>
+                    <InputLabel shrink htmlFor="company">
+                      Company
+                    </InputLabel>
+                    <BootstrapInput placeholder="Enter conpany name" id="company" />
+                  </FormControl>
+                </Grid>
               </Grid>
+
               <Button
                 type="submit"
                 variant="contained"
@@ -134,7 +210,6 @@ export default function SignIn() {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  padding: '16px 20px',
                   gap: '10px',
                   width: '110px',
                   height: '49px',
@@ -143,8 +218,7 @@ export default function SignIn() {
                   marginBottom: '25px',
                   marginLeft: '-15px'
                 }}
-              >
-                Login
+              >Next
               </Button>
             </Box>
 
@@ -152,5 +226,5 @@ export default function SignIn() {
         </Grid>
       </Grid>
     </ThemeProvider >
-  );
+  )
 }

@@ -1,12 +1,9 @@
-import { jsx } from '@emotion/react'
 import * as React from 'react';
-import { alpha, styled } from '@mui/material/styles';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import InputAdornment from '@mui/material/InputAdornment';
 import Input from '@mui/material/Input';
-import InputBase from '@mui/material/InputBase';
 import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
@@ -18,43 +15,23 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
+import { BootstrapInput, theme } from "./styled/styled";
 
-const theme = createTheme();
-const BootstrapInput = styled(InputBase)(({ theme }) => ({
-  'label + &': {
-    marginTop: theme.spacing(3),
-  },
-  '& .MuiInputBase-input': {
-    borderRadius: 4,
-    position: 'relative',
-    marginBottom: "25px",
-    backgroundColor: theme.palette.mode === 'light' ? "#F2F2F2" : '#2b2b2b',
-    border: '1px solid #ced4da',
-    fontSize: 14,
-    width: '100%',
-    padding: '10px 12px',
-    transition: theme.transitions.create([
-      'border-color',
-      'background-color',
-      'box-shadow',
-    ]),
-    '&:focus': {
-      boxShadow: `${alpha(theme.palette.primary.main, 0.25)} 0 0 0 0.2rem`,
-      borderColor: theme.palette.primary.main,
-    },
-  },
-}));
 
-export default function SignInSide({ props }) {
+export default function Confirm({ props, setUser, tempUser }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const { email, fName, lName, company } = event.target.elements
+    const data = {
+      email: email.value,
+      fName: fName.value,
+      lName: lName.value,
+      company: company.value,
+      country: country
+    }
+    setUser(data)
   };
   const [showPassword, setShowPassword] = React.useState(false);
   const handleMouseDownPassword = (event) => {
@@ -176,7 +153,7 @@ export default function SignInSide({ props }) {
                   marginLeft: '-15px'
                 }}
               >
-                <Link href="/confirmResult" style={{ textDecoration: 'none', color: 'inherit', padding: '16px 10px', }}>Create Account</Link>
+                Create Account
               </Button>
             </Box>
           </Box>

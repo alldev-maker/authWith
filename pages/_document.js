@@ -22,8 +22,7 @@ export default class MyDocument extends Document {
           />
           <link
             rel="stylesheet"
-            display="optional"
-            href="https://fonts.googleapis.com/css?family=Material+Icons+Two+Tone"
+            href="https://fonts.googleapis.com/css?family=Material+Icons+Two+Tone&display=optional"
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}

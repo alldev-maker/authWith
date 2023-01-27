@@ -9,27 +9,9 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems } from './componentns/listItems';
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+import { mainListItems } from './componentns/SideBarItems';
+
 
 const drawerWidth = 272;
 
@@ -100,11 +82,6 @@ function DashboardContent() {
             >
               Dashboard
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open} >
