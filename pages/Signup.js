@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import InputLabel from '@mui/material/InputLabel';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -19,8 +18,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
-import { BootstrapInput, theme } from "./styled/styled";
-import Confirm from "./Confirm";
+import { BootstrapInput, theme } from "../styled/styled";
+import Confirm from "./confirm";
 
 export default function Signup({ setUser }) {
   const [tempUser, setTempUser] = React.useState(null)
@@ -225,6 +224,6 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider >
+    </ThemeProvider>
   )
 }

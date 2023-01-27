@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import confirmImg from '../public/img/confirmed.png'
 import style from '../styles/Home.module.css'
-import { theme } from "./styled/styled";
+import { theme } from "../styled/styled";
 
 export default function ConfirmResult() {
   const handleSubmit = (event) => {

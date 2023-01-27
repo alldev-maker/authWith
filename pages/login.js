@@ -17,7 +17,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
-import { BootstrapInput, theme } from "./styled/styled";
+import { BootstrapInput, theme } from "../styled/styled";
 
 export default function SignIn() {
   const handleSubmit = (event) => {

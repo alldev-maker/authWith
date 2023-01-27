@@ -10,10 +10,10 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems } from './componentns/SideBarItems';
+import { mainListItems } from '../componentns/sidebar-items';
 
 
-const drawerWidth = 272;
+const drawerWidth = 276;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -71,19 +71,6 @@ function DashboardContent() {
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}>
-          <Toolbar>
-            <Typography
-              component="h1"
-              variant="h6"
-              color="inherit"
-              noWrap
-              sx={{ flexGrow: 1 }}
-            >
-              Dashboard
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <Drawer variant="permanent" open={open} >
           <Toolbar
             sx={{
@@ -100,7 +87,7 @@ function DashboardContent() {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider />
+          <Divider style={{ borderColor: 'rgba(122, 136, 153, 0.28)', width: "230px", marginTop: '40px' }} />
           <List component="nav"
             style={{
               backgroundColor: ' #0E1218',
