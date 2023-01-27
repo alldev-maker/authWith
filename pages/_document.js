@@ -16,13 +16,14 @@ export default class MyDocument extends Document {
             href="/static/favicon.ico" />
           <link
             rel="stylesheet"
+            display="optional"
             href=
             "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
           <link
             rel="stylesheet"
+            display="optional"
             href="https://fonts.googleapis.com/css?family=Material+Icons+Two+Tone"
-          // Import the two tones MD variant                           ^^^^^^^^
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}

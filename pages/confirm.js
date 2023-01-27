@@ -20,6 +20,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
+
 const theme = createTheme();
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
@@ -45,6 +46,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+
 export default function SignInSide({ props }) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -59,6 +61,7 @@ export default function SignInSide({ props }) {
     event.preventDefault();
   };
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }} spacing={0} style={{ maxWidth: '1512px', margin: '0 auto' }}>

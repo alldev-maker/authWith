@@ -103,7 +103,7 @@ export default function SignInSide() {
             </div>
           </Box>
           <div className={style.confirmImg}>
-            <Image src={confirmImg}/>
+            <Image src={confirmImg} alt="confirm"/>
           </div>
         </Grid>
       </Grid>
