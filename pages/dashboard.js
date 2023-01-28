@@ -6,12 +6,12 @@ import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems } from '../componentns/sidebar-items';
-
+import { MainListItems } from '../componentns/sidebar-items';
+import { BoardHeader } from "../componentns/board-header";
+import {Collection} from '../componentns/collection-tree'
 
 const drawerWidth = 276;
 
@@ -63,6 +63,8 @@ const mdTheme = createTheme();
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
+  const initialState = { 1: false, 2: false, 3: false, 0: false }
+  const [dropdownState, setDropdownState] = React.useState(initialState)
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -87,30 +89,46 @@ function DashboardContent() {
               <ChevronLeftIcon />
             </IconButton>
           </Toolbar>
-          <Divider style={{ borderColor: 'rgba(122, 136, 153, 0.28)', width: "230px", marginTop: '40px' }} />
+          <Divider style={{
+            borderColor: 'rgba(122, 136, 153, 0.28)',
+            width: "230px",
+            top: '109px',
+            right: '50%',
+            transform: 'translate(50%)',
+            position: 'absolute',
+            zIndex: '123',
+          }} />
           <List component="nav"
             style={{
               backgroundColor: ' #0E1218',
-              height: '100vh',
+              height: '93.2vh',
               color: 'rgba(187, 202, 191, 0.85)'
             }}>
-            {mainListItems}
+            <MainListItems/>
           </List>
         </Drawer>
         <Box
           component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
+            backgroundColor: 'white',
             flexGrow: 1,
             overflow: 'auto',
+            padding:'32px'
           }}
+          >
+          <BoardHeader/>
+            <Divider style={{
+            top: '29px',
+            position:'relative',
+            borderColor: 'rgba(122, 136, 153, 0.28)',
+            marginBottom:'85px'
+          }} />
+          <div style={{border:"1px solid #EAECF0", padding:'20px', borderRadius:"8px", boxShadow:'0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);'}}>
+          {[1,2,3,4].map((item, index) => <Collection key={item} initialState={initialState} setDropdownState={setDropdownState} dropdownState={dropdownState} index={index}/>)}
+          </div>
 
-        >
-          <Toolbar />
         </Box>
+
       </Box>
     </ThemeProvider>
   );

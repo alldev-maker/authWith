@@ -93,35 +93,40 @@ export default function Confirm({ props, setUser, tempUser }) {
                 <FormControl fullWidth sx={{ m: 1 }} variant="standard">
                   <Input
                     id="email"
-                    style={{ textAlign: 'right' }}
+                    defaultValue={tempUser.email}
+                    inputProps={{ style: { textAlign: 'right' } }}
                     startAdornment={<InputAdornment position="start">Business email name</InputAdornment>}
                   />
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }} variant="standard">
                   <Input
                     id="fName"
-                    style={{ textAlign: 'right' }}
+                    defaultValue={tempUser.fName}
+                    inputProps={{ style: { textAlign: 'right' } }}
                     startAdornment={<InputAdornment position="start">First name</InputAdornment>}
                   />
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }} variant="standard">
                   <Input
                     id="lName"
-                    style={{ textAlign: 'right' }}
+                    defaultValue={tempUser.lName}
+                    inputProps={{ style: { textAlign: 'right' } }}
                     startAdornment={<InputAdornment position="start">Last name</InputAdornment>}
                   />
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }} variant="standard">
                   <Input
                     id="country"
-                    style={{ textAlign: 'right' }}
+                    defaultValue={tempUser.country}
+                    inputProps={{ style: { textAlign: 'right' } }}
                     startAdornment={<InputAdornment position="start">Country</InputAdornment>}
                   />
                 </FormControl>
                 <FormControl fullWidth sx={{ m: 1 }} variant="standard">
                   <Input
                     id="company"
-                    classes={{ textAlign: 'right', marginBottom: '15px' }}
+                    defaultValue={tempUser.company}
+                    inputProps={{ style: { textAlign: 'right' } }}
                     startAdornment={<InputAdornment position="start">Company</InputAdornment>}
                   />
                 </FormControl>
