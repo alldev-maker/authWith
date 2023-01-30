@@ -38,8 +38,7 @@ export default function Signup({ setUser }) {
       company: company.value,
       country: country
     }
-    setTempUser(data)
-    console.log(tempUser)
+    setTempUser(() => data)
   };
   return (
     <>
@@ -105,7 +104,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
             </div>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}  >
               <Grid container spacing={2} >
-                <Grid xs={12}>
+                <Grid item xs={12}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="email">
                       Business Email Address
@@ -113,7 +112,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     <BootstrapInput placeholder="loemipsum@gmail.com" id="email" type="email" style={{ width: '100%' }} />
                   </FormControl>
                 </Grid>
-                <Grid xs={12} sm={6} style={{ marginBottom: '35px' }}>
+                <Grid item xs={12} sm={6} style={{ marginBottom: '35px' }}>
                   <FormControl variant="standard" style={{
                     width: '96%',
                   }}>
@@ -123,7 +122,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     <BootstrapInput placeholder="Jonny" id="fName" />
                   </FormControl>
                 </Grid>
-                <Grid xs={12} sm={6}>
+                <Grid item xs={12} sm={6}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="lName">
                       Last Name
@@ -131,7 +130,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     <BootstrapInput placeholder="Welings" id="lName" />
                   </FormControl>
                 </Grid>
-                <Grid xs={12}>
+                <Grid item xs={12}>
                   <FormControl variant="outlined" style={{
                     width: '100%',
                     borderRadius: '4px',
@@ -167,7 +166,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     />
                   </FormControl>
                 </Grid>
-                <Grid xs={12} sm={6}>
+                <Grid item xs={12} sm={6}>
                   <FormControl sx={{ mt: 3 }} style={{ width: '96%' }}>
                     <Select
                       displayEmpty
@@ -178,7 +177,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
 
                       inputProps={{ 'aria-label': 'Without label' }}
                     >
-                      <MenuItem disabled value="">
+                      <MenuItem disabled value='Russia'>
                         <em>Select a Country</em>
                       </MenuItem>
                       {countries.map((country) => (
@@ -192,7 +191,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     </Select>
                   </FormControl>
                 </Grid>
-                <Grid xs={12} sm={6}>
+                <Grid item xs={12} sm={6}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="company">
                       Company
@@ -224,6 +223,6 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider>
+    </ThemeProvider >
   )
 }

@@ -20,7 +20,14 @@ import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "../styled/styled";
 
 
-export default function Confirm({ props, setUser, tempUser }) {
+export default function Confirm({ setUser, tempUser = {
+  email: '',
+  fName: '',
+  lName: '',
+  company: '',
+  country: ''
+} } = {}) {
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const { email, fName, lName, company } = event.target.elements
@@ -142,24 +149,26 @@ export default function Confirm({ props, setUser, tempUser }) {
                 <BootstrapInput placeholder="Enter code..." id="digitToken" />
               </FormControl>
               <Typography style={{ marginLeft: '-1px', marginBottom: '35px' }}>Didn`&apos;`t receive email? Check your spam folder or <Link style={{ color: 'green', textDecoration: 'none' }}>resend</Link> after 30 seconds</Typography>
-              <Button
-                type="submit"
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'row',
-                  gap: '10px',
-                  width: '178px',
-                  height: '49px',
-                  background: '#07090D',
-                  borderRadius: '4px',
-                  marginBottom: '25px',
-                  marginLeft: '-15px'
-                }}
-              >
-                Create Account
-              </Button>
+              <Link style={{ textDecoration: 'none' }}>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    gap: '10px',
+                    width: '178px',
+                    height: '49px',
+                    background: '#07090D',
+                    borderRadius: '4px',
+                    marginBottom: '25px',
+                    marginLeft: '-15px'
+                  }}
+                >
+                  Create Account
+                </Button>
+              </Link>
             </Box>
           </Box>
         </Grid>

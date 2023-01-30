@@ -9,13 +9,14 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { MainListItems } from '../componentns/sidebar-items';
-import { BoardHeader } from "../componentns/dashboard/board-header";
-import { Collection } from '../componentns/dashboard/collection-tree'
 import { AvartarInfo } from "../componentns/dashboard/user-info";
-import { mdTheme, Drawer, AppBar } from '../styled/styled'
+import { mdTheme, Drawer } from '../styled/styled'
+import { UserPageHeader } from "../componentns/users/user-head";
+import { LoremContentTypo } from "../styled/typhos";
+import UserDataTable from "../componentns/users/user-table";
+import { SessionsPageHeader } from "../componentns/sessions/sessions-header";
 
-
-function DashboardContent() {
+function SessionsContent() {
   const router = useRouter()
   const path = router.pathname
   const [open, setOpen] = React.useState(true);
@@ -80,19 +81,17 @@ function DashboardContent() {
             backgroundColor: 'white',
             flexGrow: 1,
             overflow: 'auto',
-            padding: '32px'
+            padding: '32px',
+            paddingBottom: '0'
           }}
         >
-          <BoardHeader />
+          <SessionsPageHeader />
           <Divider sx={{
-            top: '29px',
+            top: '15px',
             position: 'relative',
             borderColor: 'rgba(122, 136, 153, 0.28)',
-            marginBottom: '85px'
+            marginBottom: '45px'
           }} />
-          <div style={{ border: "1px solid #EAECF0", padding: '20px', borderRadius: "8px", boxShadow: '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)' }}>
-            {[1, 2, 3, 4].map((item, index) => <Collection key={item} initialState={initialState} setDropdownState={setDropdownState} dropdownState={dropdownState} index={index} />)}
-          </div>
         </Box>
 
       </Box>
@@ -100,6 +99,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Sessions() {
+  return <SessionsContent />;
 }
