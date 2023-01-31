@@ -85,7 +85,7 @@ export default function SignIn() {
               fontWeight: '400',
               fontSize: '16px',
               lineHeight: '19px',
-            }}> Don't have an AuthWith account? <Link href="/signup" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
+            }}> Don &apos;t have an AuthWith account? <Link href="/signup" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
 
             <SignupTypo>
               Sign in
