@@ -252,9 +252,7 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                 }}
               >
                 <ButtonTypo>
-                  <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/confirm">
-                    Next
-                  </Link>
+                  Next
                 </ButtonTypo>
               </Button>
             </Box>

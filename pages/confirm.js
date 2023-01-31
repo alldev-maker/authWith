@@ -27,7 +27,7 @@ export default function Confirm({ setUser, tempUser = {
   lName: '',
   company: '',
   country: ''
-} } = {}) {
+} }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -177,7 +177,7 @@ export default function Confirm({ setUser, tempUser = {
                 </InputLabel>
                 <BootstrapInput placeholder="Enter code..." id="digitToken" />
               </FormControl>
-              <Typography style={{ marginLeft: '-1px', marginBottom: '35px' }}>Didn`&apos;`t receive email? Check your spam folder or <Link style={{ color: 'green', textDecoration: 'none' }}>resend</Link> after 30 seconds</Typography>
+              <Typography style={{ marginLeft: '-1px', marginBottom: '35px' }}>Didn &apos;t receive email? Check your spam folder or <Link style={{ color: 'green', textDecoration: 'none' }}>resend</Link> after 30 seconds</Typography>
               <Button
                 type="submit"
                 variant="contained"
