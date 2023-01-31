@@ -8,13 +8,10 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { MainListItems } from '../componentns/sidebar-items';
-import { AvartarInfo } from "../componentns/dashboard/user-info";
+import { MainListItems } from '../componentns/SidebarItems';
+import { AvartarInfo } from "../componentns/dashboard/UserInfo";
 import { mdTheme, Drawer } from '../styled/styled'
-import { UserPageHeader } from "../componentns/users/user-head";
-import { LoremContentTypo } from "../styled/typhos";
-import UserDataTable from "../componentns/users/user-table";
-import { SessionsPageHeader } from "../componentns/sessions/sessions-header";
+import { SessionsPageHeader } from "../componentns/sessions/SessionsHeader";
 
 function SessionsContent() {
   const router = useRouter()

@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
-import { UserModal } from "./user-modal";
+import { UserModal } from "./UserModal";
 import { LoremContentTypo, DashboardTitleTypo } from "../../styled/typhos";
 export function UserPageHeader() {
   return (

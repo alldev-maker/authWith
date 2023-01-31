@@ -18,6 +18,7 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "../styled/styled";
+import { SignupTypo, SignhpLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -52,10 +53,17 @@ export default function SignIn() {
           }}
         >
           <div className={style.greetingTypo}>
-            <Typography component="h1" variant="h4" style={{ fontSize: '26px', color: 'white', paddingBottom: '13.6px' }}>
-              Create an <span>AuthWith</span> account
-            </Typography>
-            <Typography component="h1" variant="h5" style={{ fontSize: '15px', color: '#E2DEF7' }}>
+            <SignhpLeftbarTypo>
+              Welcome Back
+            </SignhpLeftbarTypo>
+            <Typography component="h1" variant="h5" style={{
+              marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7',
+              fontFamily: 'Urbanist',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              fontSize: '16px',
+              lineHeight: '19px',
+            }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </div>
@@ -70,23 +78,38 @@ export default function SignIn() {
               alignItems: 'left',
             }}
           >
-            <Typography style={{ marginLeft: '-15px', marginBottom: '35px' }}>Already have an AuthWith account? <Link href="/index" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
+            <Typography style={{
+              marginLeft: '-15px', marginBottom: '35px',
+              fontFamily: 'Urbanist',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              fontSize: '16px',
+              lineHeight: '19px',
+            }}> Don't have an AuthWith account? <Link href="/signup" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
 
-            <Typography component="h1" variant="h4" style={{ marginLeft: '-15px' }}>
+            <SignupTypo>
               Sign in
-            </Typography>
+            </SignupTypo>
             <div className={style.avatar}>
               <Avatar sx={{ m: 1, color: '#3F3F3F', background: 'white', marginLeft: '-20px' }}>
                 <LockOutlinedIcon />
               </Avatar>
-              <Typography >Account Information</Typography>
+              <Typography style={{
+                fontFamily: 'Urbanist',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                fontSize: '16px',
+                lineHeight: '19px',
+              }} >Account Information</Typography>
             </div>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}  >
               <Grid container spacing={2} >
                 <Grid xs={12}>
                   <FormControl variant="standard" style={{ width: '100%', marginBottom: '35px' }}>
                     <InputLabel shrink htmlFor="email">
-                      Business Email Address
+                      <LabelTypo>
+                        Business Email Address
+                      </LabelTypo>
                     </InputLabel>
                     <BootstrapInput placeholder="loemipsum@gmail.com" id="email" style={{ width: '100%' }} />
                   </FormControl>
@@ -105,7 +128,9 @@ export default function SignIn() {
                       left: '-12px',
                       top: '-13px'
                     }}>
-                      Password
+                      <LabelTypo>
+                        password
+                      </LabelTypo>
                     </InputLabel>
                     <OutlinedInput
                       id="password"
@@ -144,13 +169,17 @@ export default function SignIn() {
                   marginLeft: '-15px'
                 }}
               >
-                Login
+                <ButtonTypo>
+                  <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/collections">
+                    Login
+                  </Link>
+                </ButtonTypo>
               </Button>
             </Box>
 
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 }

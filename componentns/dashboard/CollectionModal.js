@@ -16,7 +16,8 @@ import { BootstrapInput, theme } from "../../styled/styled";
 import { ButtonGroup } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import AddIcon from '@mui/icons-material/Add';
-import { CreateButton } from "../create-button";
+import { CreateButton } from "../Button";
+import { ButtonTypo } from "../../styled/typhos";
 
 
 const style = {
@@ -34,14 +35,14 @@ const style = {
   borderRadius: '12px',
 };
 
-export function SessionModal() {
+export function CollectionModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <CreateButton onClick={handleOpen}>Create Session</CreateButton>
+      <CreateButton onClick={handleOpen}><ButtonTypo>Create Collection</ButtonTypo></CreateButton>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -152,6 +153,7 @@ export function SessionModal() {
                 <Avatar style={{ background: '#9097A1' }} children={<AddIcon />} />
               </ButtonGroup>
             </FormControl>
+            <CreateButton onClick={handleOpen}>Create Collection</CreateButton>
           </Box>
         </Fade>
       </Modal>

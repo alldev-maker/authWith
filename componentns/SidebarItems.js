@@ -17,7 +17,7 @@ function ListItemButtonMod({ propPath, sx, originPath, ...props }) {
 export const MainListItems = ({ path }) => {
   return <div style={{ paddingTop: "90px" }}>
 
-    <Link href='/dashboard' sx={{ textDecoration: 'none' }}>
+    <Link href='/collections' sx={{ textDecoration: 'none' }}>
       <SidebarItemTypo>
         <ListItemButtonMod propPath={path} originPath='/collections' value="Collections">
           <ListItemIcon >

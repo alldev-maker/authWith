@@ -6,8 +6,6 @@ import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
-import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
-import Divider from '@mui/material/Divider';
 import Avatar from '@mui/material/Avatar';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
@@ -16,33 +14,32 @@ import { BootstrapInput, theme } from "../../styled/styled";
 import { ButtonGroup } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import AddIcon from '@mui/icons-material/Add';
-import { CreateButton } from "../create-button";
-import { ButtonTypo } from "../../styled/typhos";
+import { CreateButton } from "../Button";
+import Add from "@mui/icons-material/Add"
 
 
 const style = {
-  position: 'absolute',
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'flex-start',
+  alignItems: 'flex - start',
   padding: '24px 32px',
   gap: '10px',
+  position: 'absolute',
   width: '621px',
-  height: '740px',
-  right: '30px',
-  top: '91px',
+  height: '527px',
+  left: '411px',
+  top: '400px',
   background: '#FFFFFF',
   borderRadius: '12px',
 };
 
-export function UserModal() {
+export function AddFlowModal({ state, index }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
   return (
     <div>
-      <CreateButton onClick={handleOpen}><ButtonTypo>Add new user</ButtonTypo></CreateButton>
+      <AddFlowButton onClick={handleOpen} state={state} index={index}>Create Collection</AddFlowButton>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -53,11 +50,12 @@ export function UserModal() {
         BackdropProps={{
           timeout: 500,
         }}
+        sx={{ position: 'absolute' }}
       >
         <Fade in={open}>
           <Box sx={style}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-              <Typography component="h1" variant="h5">Add Collection</Typography>
+              <Typography component="h1" variant="h5">Add Flow</Typography>
               <Button onClick={handleClose}>
                 <CloseIcon />
               </Button>
@@ -71,43 +69,11 @@ export function UserModal() {
                 lineHeight: '17px',
                 color: '#465262',
               }}>
-                Collection Name
-              </InputLabel>
-              <BootstrapInput placeholder="E-commerce Franchise" id="collectionName" type="text" style={{ width: '100%' }} />
-            </FormControl>
-            <Divider sx={{
-              top: '-15px',
-              position: 'relative',
-              borderColor: 'rgba(122, 136, 153, 0.28)',
-              width: '100%'
-            }} />
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
-              <Typography component="h1" variant="h5" sx={{
-                fontFamily: 'Urbanist',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                fontSize: '20px',
-                lineHeight: '24px',
-                color: '#344054',
-              }}>Add Flow</Typography>
-              <Button sx={{ color: '#FF6666', alignItems: 'center', background: 'rgba(255, 225, 225, 0.87)' }}>
-                <DeleteOutlinedIcon sx={{ fontSize: '27px', color: '#FF6666' }} /> Remove Flow
-              </Button>
-            </div>
-            <FormControl variant="standard" style={{ width: '100%' }}>
-              <InputLabel shrink htmlFor="collectionName" sx={{
-                fontFamily: 'Urbanist',
-                fontStyle: 'normal',
-                fontWeight: '600',
-                fontSize: '14px',
-                lineHeight: '17px',
-                color: '#465262',
-              }}>
                 Flow Name
               </InputLabel>
-              <BootstrapInput placeholder="Enter name" id="collectionName" type="text" style={{ width: '100%' }} />
+              <BootstrapInput placeholder="Enter name" id="collectionName" type="text" sx={{ width: '100%', marginBottom: '0' }} />
             </FormControl>
-            <p>Icon</p>
+            <p style={{ margin: '0' }}>Icon</p>
             <div style={{ display: 'flex' }}>
               <Button sx={{ alignItems: 'center', color: '#475467' }}>
                 <BackupIcon />
@@ -153,9 +119,21 @@ export function UserModal() {
                 <Avatar style={{ background: '#9097A1' }} children={<AddIcon />} />
               </ButtonGroup>
             </FormControl>
+            <CreateButton onClick={handleOpen}>Create Collection</CreateButton>
           </Box>
         </Fade>
       </Modal>
     </div>
   );
+}
+
+function AddFlowButton({ onClick, state, index, ...props }) {
+  return (
+    <Button startIcon={<Add />} onClick={onClick} style={{
+      top: !state[index] ? '-95px' : '',
+      right: "-95px",
+      color: "#45AA61",
+      display: !state[index] ? 'none' : 'flex'
+    }} {...props} />
+  )
 }

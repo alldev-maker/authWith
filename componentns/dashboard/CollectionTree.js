@@ -14,10 +14,10 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import FilterNoneIcon from '@mui/icons-material/FilterNone';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import BorderColorOutlinedIcon from "@mui/icons-material/BorderColorOutlined";
-import { IOSSwitch } from "./switch";
+import { IOSSwitch } from "./Switch";
 import labelImg1 from '../img/Avatar.png'
 import labelImg2 from '../img/ee.png'
-import { AddFlowModal } from "./flow-add";
+import { AddFlowModal } from "./FlowAdd";
 
 const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   color: theme.palette.text.secondary,

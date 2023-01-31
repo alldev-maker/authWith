@@ -37,12 +37,13 @@ export function SignupTypo(props) {
 }
 export function SignhpLeftbarTypo(props) {
   return <Typography component="h1" variant="h4" style={{
-    marginLeft: '-15px', fontSize: '26px', color: 'white', paddingBottom: '13.6px',
+    marginLeft: '', fontSize: '26px', color: 'white', paddingBottom: '13.6px',
     fontFamily: 'Urbanist',
     fontStyle: 'normal',
     fontWeight: '600',
     fontSize: '28px',
     lineHeight: '34px',
+    textAlign: 'left'
   }} {...props} />
 }
 export function LabelTypo(props) {

@@ -8,10 +8,10 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { MainListItems } from '../componentns/sidebar-items';
-import { BoardHeader } from "../componentns/dashboard/board-header";
-import { Collection } from '../componentns/dashboard/collection-tree'
-import { AvartarInfo } from "../componentns/dashboard/user-info";
+import { MainListItems } from '../componentns/SidebarItems';
+import { BoardHeader } from "../componentns/dashboard/BoardHeader";
+import { Collection } from '../componentns/dashboard/CollectionTree'
+import { AvartarInfo } from "../componentns/dashboard/UserInfo";
 import { mdTheme, Drawer, AppBar } from '../styled/styled'
 
 

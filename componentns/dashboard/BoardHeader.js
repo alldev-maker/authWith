@@ -1,7 +1,7 @@
 import React from 'react'
 import Badge from '@mui/material/Badge';
-import { CollectionModal } from "./collection-modal";
-import { LoremContentTypo, DashboardTitleTypo } from "../../styled/typhos";
+import { CollectionModal } from "./CollectionModal";
+import { LoremContentTypo, DashboardTitleTypo, ButtonTypo } from "../../styled/typhos";
 
 
 export function BoardHeader() {
