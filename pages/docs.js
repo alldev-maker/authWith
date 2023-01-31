@@ -11,10 +11,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import { MainListItems } from '../componentns/SidebarItems';
 import { AvartarInfo } from "../componentns/dashboard/UserInfo";
 import { mdTheme, Drawer } from '../styled/styled'
-import { SessionsPageHeader } from "../componentns/sessions/SessionsHeader";
-import { SessionsTable } from "../componentns/sessions/SessionsTable";
+import { DocsPageHeader } from "../componentns/docs/DocsHeader";
 
-function SessionsContent() {
+function DocsContent() {
   const router = useRouter()
   const path = router.pathname
   const [open, setOpen] = React.useState(true);
@@ -81,21 +80,19 @@ function SessionsContent() {
             paddingBottom: '0'
           }}
         >
-          <SessionsPageHeader />
+          <DocsPageHeader />
           <Divider sx={{
             top: '15px',
             position: 'relative',
             borderColor: 'rgba(122, 136, 153, 0.28)',
             marginBottom: '45px'
           }} />
-          <SessionsTable />
         </Box>
-
       </Box>
     </ThemeProvider>
   );
 }
 
-export default function Sessions() {
-  return <SessionsContent />;
+export default function Docs() {
+  return <DocsContent />;
 }

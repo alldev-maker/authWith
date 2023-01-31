@@ -19,8 +19,6 @@ function UsersContent() {
   const router = useRouter()
   const path = router.pathname
   const [open, setOpen] = React.useState(true);
-  const initialState = { 1: false, 2: false, 3: false, 0: false }
-  const [dropdownState, setDropdownState] = React.useState(initialState)
   const toggleDrawer = () => {
     setOpen(!open);
   };
