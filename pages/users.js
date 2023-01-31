@@ -91,7 +91,7 @@ function UsersContent() {
             borderColor: 'rgba(122, 136, 153, 0.28)',
             marginBottom: '45px'
           }} />
-          <LoremContentTypo sx={{ width: '250px', marginBottom: "32px" }}>
+          <LoremContentTypo sx={{ width: '260px', marginBottom: "32px" }}>
             Lorem ipsum dolor sit, amet consectetur ipsum fermentum porttittoe enim
           </LoremContentTypo>
           <UserDataTable />
@@ -101,7 +101,7 @@ function UsersContent() {
             borderColor: 'rgba(122, 136, 153, 0.28)',
             marginBottom: '25px'
           }} />
-          <LoremContentTypo sx={{ width: '250px', marginBottom: "32px" }}>
+          <LoremContentTypo sx={{ width: '260px', marginBottom: "32px" }}>
             Lorem ipsum dolor sit, amet consectetur ipsum fermentum porttittoe enim
           </LoremContentTypo>
           <UserDataTable />

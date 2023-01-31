@@ -196,7 +196,6 @@ export default function Confirm({ setUser, tempUser = {
               >
                 <ButtonTypo>
                   <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/dashboard">
-
                     Create Account
                   </Link>
                 </ButtonTypo>

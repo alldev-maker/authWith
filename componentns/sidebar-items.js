@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Link, Typography } from "@mui/material";
-import { useRouter } from "next/router";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -20,7 +19,7 @@ export const MainListItems = ({ path }) => {
 
     <Link href='/dashboard' sx={{ textDecoration: 'none' }}>
       <SidebarItemTypo>
-        <ListItemButtonMod propPath={path} originPath='/dashboard' value="Collections">
+        <ListItemButtonMod propPath={path} originPath='/collections' value="Collections">
           <ListItemIcon >
             <Layers style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
           </ListItemIcon>

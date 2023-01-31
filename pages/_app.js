@@ -28,7 +28,7 @@ export default function MyApp(props) {
 				consistent, and simple baseline to
 				build upon. */}
 
-        <CssBaseline />
+        <CssBaseline style={{ fontFamily: 'Urbanist' }} />
         <Component {...pageProps} />
       </ThemeProvider>
     </CacheProvider>

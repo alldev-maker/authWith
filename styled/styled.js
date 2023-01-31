@@ -6,8 +6,11 @@ import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 
 
-const theme = createTheme();
-
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Urbanist'
+  }
+});
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
     marginTop: theme.spacing(3),
@@ -79,6 +82,10 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  typography: {
+    fontFamily: 'Urbanist'
+  }
+});
 
 export { BootstrapInput, theme, mdTheme, Drawer, AppBar }
