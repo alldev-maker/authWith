@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -18,40 +18,58 @@ function ListItemButtonMod({ propPath, sx, originPath, ...props }) {
 export const MainListItems = ({ path }) => {
   return <div style={{ paddingTop: "90px" }}>
 
-    <Link href='' sx={{ textDecoration: 'none' }}>
-      <ListItemButtonMod propPath={path} originPath='/' value="Collections">
-        <ListItemIcon >
-          <Layers style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
-        </ListItemIcon>
-        <ListItemText primary="Collections" />
-      </ListItemButtonMod>
+    <Link href='/dashboard' sx={{ textDecoration: 'none' }}>
+      <SidebarItemTypo>
+        <ListItemButtonMod propPath={path} originPath='/dashboard' value="Collections">
+          <ListItemIcon >
+            <Layers style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
+          </ListItemIcon>
+          <ListItemText primary="Collections" />
+        </ListItemButtonMod>
+      </SidebarItemTypo>
     </Link>
 
     <Link href='/sessions' sx={{ textDecoration: 'none' }}>
-      <ListItemButtonMod propPath={path} originPath='/sessions' value="Sessions">
-        <ListItemIcon>
-          <Cloud style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
-        </ListItemIcon>
-        <ListItemText primary="Sessions" />
-      </ListItemButtonMod>
+      <SidebarItemTypo>
+        <ListItemButtonMod propPath={path} originPath='/sessions' value="Sessions">
+          <ListItemIcon>
+            <Cloud style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
+          </ListItemIcon>
+          <ListItemText primary="Sessions" />
+        </ListItemButtonMod>
+      </SidebarItemTypo>
     </Link>
 
     <Link href='/users' sx={{ textDecoration: 'none' }}>
-      <ListItemButtonMod propPath={path} originPath='/users' value="Users">
-        <ListItemIcon>
-          <PermIdentityIcon style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
-        </ListItemIcon>
-        <ListItemText primary="Users" />
-      </ListItemButtonMod>
+      <SidebarItemTypo>
+        <ListItemButtonMod propPath={path} originPath='/users' value="Users">
+          <ListItemIcon>
+            <PermIdentityIcon style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
+          </ListItemIcon>
+          <ListItemText primary="Users" />
+        </ListItemButtonMod>
+      </SidebarItemTypo>
     </Link>
 
     <Link href='/docs' sx={{ textDecoration: 'none' }}>
-      <ListItemButtonMod propPath={path} originPath='/docs' value="Docs">
-        <ListItemIcon>
-          <MenuBookIcon style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
-        </ListItemIcon>
-        <ListItemText primary="Docs" />
-      </ListItemButtonMod>
+      <SidebarItemTypo>
+        <ListItemButtonMod propPath={path} originPath='/docs' value="Docs">
+          <ListItemIcon>
+            <MenuBookIcon style={{ color: 'rgba(187, 202, 191, 0.85)' }} />
+          </ListItemIcon>
+          <ListItemText primary="Docs" />
+        </ListItemButtonMod>
+      </SidebarItemTypo>
     </Link>
   </div>
 };
+
+function SidebarItemTypo(props) {
+  return <Typography component='h1' variant='h4' style={{
+    fontFamily: 'Urbanist',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '14px',
+    lineHeight: '17px',
+  }} {...props} />
+}

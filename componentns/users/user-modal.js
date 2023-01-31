@@ -17,6 +17,7 @@ import { ButtonGroup } from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import AddIcon from '@mui/icons-material/Add';
 import { CreateButton } from "../create-button";
+import { ButtonTypo } from "../../styled/typhos";
 
 
 const style = {
@@ -41,7 +42,7 @@ export function UserModal() {
 
   return (
     <div>
-      <CreateButton onClick={handleOpen}>Add new user</CreateButton>
+      <CreateButton onClick={handleOpen}><ButtonTypo>Add new user</ButtonTypo></CreateButton>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

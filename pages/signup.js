@@ -20,6 +20,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "../styled/styled";
 import Confirm from "./confirm";
+import { SignupTypo, SignhpLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
+
 
 export default function Signup({ setUser }) {
   const [tempUser, setTempUser] = React.useState(null)
@@ -73,10 +75,17 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
           }}
         >
           <div className={style.greetingTypo}>
-            <Typography component="h1" variant="h4" style={{ marginLeft: '-15px', fontSize: '26px', color: 'white', paddingBottom: '13.6px' }}>
+            <SignhpLeftbarTypo>
               Create an <span>AuthWith</span> account
-            </Typography>
-            <Typography component="h1" variant="h5" style={{ marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7' }}>
+            </SignhpLeftbarTypo>
+            <Typography component="h1" variant="h5" style={{
+              marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7',
+              fontFamily: 'Urbanist',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              fontSize: '16px',
+              lineHeight: '19px',
+            }}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             </Typography>
           </div>
@@ -91,23 +100,38 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
               alignItems: 'left',
             }}
           >
-            <Typography style={{ marginLeft: '-15px', marginBottom: '35px' }}>Already have an AuthWith account? <Link href="/login" style={{ color: 'green', textDecoration: 'none' }}>log in here</Link></Typography>
+            <Typography style={{
+              marginLeft: '-15px', marginBottom: '35px',
+              fontFamily: 'Urbanist',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              fontSize: '16px',
+              lineHeight: '19px',
+            }}>Already have an AuthWith account? <Link href="/login" style={{ color: 'green', textDecoration: 'none' }}>log in here</Link></Typography>
 
-            <Typography component="h1" variant="h4" style={{ marginLeft: '-15px' }}>
+            <SignupTypo>
               Sign up
-            </Typography>
+            </SignupTypo>
             <div className={style.avatar}>
               <Avatar sx={{ m: 1, color: '#3F3F3F', background: 'white', marginLeft: '-20px' }}>
                 <LockOutlinedIcon />
               </Avatar>
-              <Typography >Account Information</Typography>
+              <Typography style={{
+                fontFamily: 'Urbanist',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                fontSize: '16px',
+                lineHeight: '19px',
+              }} >Account Information</Typography>
             </div>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}  >
               <Grid container spacing={2} >
                 <Grid item xs={12}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="email">
-                      Business Email Address
+                      <LabelTypo>
+                        Business Email Address
+                      </LabelTypo>
                     </InputLabel>
                     <BootstrapInput placeholder="loemipsum@gmail.com" id="email" type="email" style={{ width: '100%' }} />
                   </FormControl>
@@ -117,7 +141,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                     width: '96%',
                   }}>
                     <InputLabel shrink htmlFor="fName">
-                      First Name
+                      <LabelTypo>
+                        First Name
+                      </LabelTypo>
                     </InputLabel>
                     <BootstrapInput placeholder="Jonny" id="fName" />
                   </FormControl>
@@ -125,7 +151,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                 <Grid item xs={12} sm={6}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="lName">
-                      Last Name
+                      <LabelTypo>
+                        Last Name
+                      </LabelTypo>
                     </InputLabel>
                     <BootstrapInput placeholder="Welings" id="lName" />
                   </FormControl>
@@ -144,7 +172,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                       left: '-12px',
                       top: '-13px'
                     }}>
-                      Password
+                      <LabelTypo>
+                        Password
+                      </LabelTypo>
                     </InputLabel>
                     <OutlinedInput
                       id="password"
@@ -178,7 +208,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                       inputProps={{ 'aria-label': 'Without label' }}
                     >
                       <MenuItem disabled value='Russia'>
-                        <em>Select a Country</em>
+                        <LabelTypo>
+                          <em>Select a Country</em>
+                        </LabelTypo>
                       </MenuItem>
                       {countries.map((country) => (
                         <MenuItem
@@ -194,7 +226,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                 <Grid item xs={12} sm={6}>
                   <FormControl variant="standard" style={{ width: '100%' }}>
                     <InputLabel shrink htmlFor="company">
-                      Company
+                      <LabelTypo>
+                        Company
+                      </LabelTypo>
                     </InputLabel>
                     <BootstrapInput placeholder="Enter conpany name" id="company" />
                   </FormControl>
@@ -216,13 +250,18 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                   marginBottom: '25px',
                   marginLeft: '-15px'
                 }}
-              >Next
+              >
+                <ButtonTypo>
+                  <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/confirm">
+                    Next
+                  </Link>
+                </ButtonTypo>
               </Button>
             </Box>
 
           </Box>
         </Grid>
       </Grid>
-    </ThemeProvider >
+    </ThemeProvider>
   )
 }

@@ -21,7 +21,6 @@ export function BoardHeader() {
             }}
             style={{
               fontFamily: 'Urbanist',
-              width: '100px',
               fontStyle: 'normal',
               fontWeight: '600',
               fontSize: '12px',
@@ -35,6 +34,8 @@ export function BoardHeader() {
               alignitems: 'center',
               marginTop: '5px',
               marginLeft: '15px',
+              top: '36px',
+              left: '450px',
             }}
           >
             25 collections
