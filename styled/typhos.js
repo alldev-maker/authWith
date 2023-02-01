@@ -35,9 +35,9 @@ export function SignupTypo(props) {
     }} {...props} />
   )
 }
-export function SignhpLeftbarTypo(props) {
+export function SignupLeftbarTypo(props) {
   return <Typography component="h1" variant="h4" style={{
-    marginLeft: '', fontSize: '26px', color: 'white', paddingBottom: '13.6px',
+    fontSize: '26px', color: 'white', paddingBottom: '13.6px',
     fontFamily: 'Urbanist',
     fontStyle: 'normal',
     fontWeight: '600',

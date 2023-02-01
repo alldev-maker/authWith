@@ -18,7 +18,7 @@ import Typography from '@mui/material/Typography';
 import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "../styled/styled";
-import { SignupTypo, SignhpLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
+import { SignupTypo, SignupLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -53,9 +53,9 @@ export default function SignIn() {
           }}
         >
           <div className={style.greetingTypo}>
-            <SignhpLeftbarTypo>
+            <SignupLeftbarTypo>
               Welcome Back
-            </SignhpLeftbarTypo>
+            </SignupLeftbarTypo>
             <Typography component="h1" variant="h5" style={{
               marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7',
               fontFamily: 'Urbanist',

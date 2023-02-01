@@ -108,15 +108,15 @@ StyledTreeItem.propTypes = {
 function CollectionButtons() {
   return (
     <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center' }}>
-      <IOSSwitch />
-      <FilterNoneIcon style={{ fontSize: '22px', color: '#45AA61' }} />
+      <IOSSwitch sx={{ marginTop: '4px' }} />
+      <FilterNoneIcon style={{ fontSize: '22px', color: '#45AA61', marginTop: '3px' }} />
       <DeleteOutlinedIcon style={{ fontSize: '27px', color: '#FF6666' }} />
     </div>
   )
 }
 function CollectionButtonMaster() {
   return (
-    <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center', marginTop: '' }}>
+    <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center' }}>
       <FilterNoneIcon style={{ fontSize: '22px', color: '#45AA61' }} />
       <DeleteOutlinedIcon style={{ fontSize: '27px', color: '#FF6666' }} />
     </div>
@@ -133,7 +133,7 @@ function CollectionNameIcon() {
 function CollectionLabelIcon({ img, text1, text2 }) {
   return (
     <span style={{
-      display: 'flex', alignItems: 'center'
+      display: 'flex', alignItems: 'center', marginTop: "10px"
     }}>
       <Image src={img} alt="labelIgm" />
       <span>{text1}</span>

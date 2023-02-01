@@ -22,7 +22,13 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             display="optional"
             href=
-            "https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,500;0,600;0,700;1,400&display=swap'"
+            "https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,500;0,600;0,700;1,400&display=swap"
+          />
+          <link
+            rel="stylesheet"
+            display="optional"
+            href=
+            "https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Urbanist:ital,wght@0,500;0,600;0,700;1,400&display=swap"
           />
           {/* Inject MUI styles first to match with the prepend: true configuration. */}
           {this.props.emotionStyleTags}

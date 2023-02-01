@@ -1,6 +1,6 @@
 import { Button } from "@mui/material"
 
-export function CreateButton({ onClick, ...props }) {
+export function CreateButton({ onClick, style, ...props }) {
   return <Button variant="contained" onClick={onClick} style={{
     padding: '0',
     display: 'flex',
@@ -23,5 +23,6 @@ export function CreateButton({ onClick, ...props }) {
     fontHize: '14px',
     lineHeight: '19px',
     color: '#E1FFE9',
+    ...style
   }} {...props} />
 }

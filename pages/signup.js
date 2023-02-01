@@ -20,7 +20,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import style from '../styles/Home.module.css'
 import { BootstrapInput, theme } from "../styled/styled";
 import Confirm from "./confirm";
-import { SignupTypo, SignhpLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
+import { SignupTypo, SignupLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
 
 
 export default function Signup({ setUser }) {
@@ -75,9 +75,9 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
           }}
         >
           <div className={style.greetingTypo}>
-            <SignhpLeftbarTypo>
+            <SignupLeftbarTypo>
               Create an <span>AuthWith</span> account
-            </SignhpLeftbarTypo>
+            </SignupLeftbarTypo>
             <Typography component="h1" variant="h5" style={{
               marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7',
               fontFamily: 'Urbanist',
@@ -256,7 +256,6 @@ function SignUpTemp({ handleSubmit, country, handleSetCountry }) {
                 </ButtonTypo>
               </Button>
             </Box>
-
           </Box>
         </Grid>
       </Grid>
