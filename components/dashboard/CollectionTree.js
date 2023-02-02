@@ -1,23 +1,23 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Image from "next/image";
-import TreeView from '@mui/lab/TreeView';
-import TreeItem, { treeItemClasses } from '@mui/lab/TreeItem';
-import Typography from '@mui/material/Typography';
-import InfoIcon from '@mui/icons-material/Info';
-import ForumIcon from '@mui/icons-material/Forum';
-import BorderColor from '@mui/icons-material/BorderColor';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import FilterNoneIcon from '@mui/icons-material/FilterNone';
-import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
-import BorderColorOutlinedIcon from "@mui/icons-material/BorderColorOutlined";
-import { IOSSwitch } from "./Switch";
+import * as React from 'react'
+import PropTypes from 'prop-types'
+import { styled } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Image from 'next/image'
+import TreeView from '@mui/lab/TreeView'
+import TreeItem, { treeItemClasses } from '@mui/lab/TreeItem'
+import Typography from '@mui/material/Typography'
+import InfoIcon from '@mui/icons-material/Info'
+import ForumIcon from '@mui/icons-material/Forum'
+import BorderColor from '@mui/icons-material/BorderColor'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+import FilterNoneIcon from '@mui/icons-material/FilterNone'
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
+import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined'
+import { IOSSwitch } from './Switch'
 import labelImg1 from '../img/Avatar.png'
 import labelImg2 from '../img/ee.png'
-import { AddFlowModal } from "./FlowAdd";
+import { AddFlowModal } from './FlowAdd'
 
 const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
   color: theme.palette.text.secondary,
@@ -52,10 +52,9 @@ const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
       paddingLeft: theme.spacing(2),
     },
   },
-}));
+}))
 
-function StyledTreeItem(props) {
-
+export const StyledTreeItem = (props) => {
   const {
     bgColor,
     color,
@@ -64,12 +63,15 @@ function StyledTreeItem(props) {
     labelText,
     style,
     ...other
-  } = props;
+  } = props
   return (
     <StyledTreeItemRoot
       label={
-        <Box sx={{ display: 'flex', alignItems: 'center', p: 0.5, pr: 0 }} >
-          <Typography variant="body2" sx={{ fontWeight: 'inherit', flexGrow: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', p: 0.5, pr: 0 }}>
+          <Typography
+            variant="body2"
+            sx={{ fontWeight: 'inherit', flexGrow: 1 }}
+          >
             {labelText}
           </Typography>
           <Typography variant="caption" color="inherit">
@@ -88,14 +90,14 @@ function StyledTreeItem(props) {
         height: '60px',
         background: '#FFFFFF',
         borderRadius: '16px',
-        marginBottom: "10px",
+        marginBottom: '10px',
         position: 'relative',
         transition: 'top 0.2s',
-        ...style
+        ...style,
       }}
       {...other}
     />
-  );
+  )
 }
 
 StyledTreeItem.propTypes = {
@@ -104,12 +106,14 @@ StyledTreeItem.propTypes = {
   labelIcon: PropTypes.elementType.isRequired,
   labelInfo: PropTypes.object,
   labelText: PropTypes.object.isRequired,
-};
+}
 function CollectionButtons() {
   return (
     <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center' }}>
       <IOSSwitch sx={{ marginTop: '4px' }} />
-      <FilterNoneIcon style={{ fontSize: '22px', color: '#45AA61', marginTop: '3px' }} />
+      <FilterNoneIcon
+        style={{ fontSize: '22px', color: '#45AA61', marginTop: '3px' }}
+      />
       <DeleteOutlinedIcon style={{ fontSize: '27px', color: '#FF6666' }} />
     </div>
   )
@@ -124,7 +128,17 @@ function CollectionButtonMaster() {
 }
 function CollectionNameIcon() {
   return (
-    <span style={{ display: 'flex', alignItems: 'flex-end', color: '#212F43', marginTop: '10px', marginBottom: '15px', borderRadius: '10px', width: '100%' }}>
+    <span
+      style={{
+        display: 'flex',
+        alignItems: 'flex-end',
+        color: '#212F43',
+        marginTop: '10px',
+        marginBottom: '15px',
+        borderRadius: '10px',
+        width: '100%',
+      }}
+    >
       Collection Name
       <BorderColorOutlinedIcon style={{ marginLeft: '15px' }} />
     </span>
@@ -132,34 +146,55 @@ function CollectionNameIcon() {
 }
 function CollectionLabelIcon({ img, text1, text2 }) {
   return (
-    <span style={{
-      display: 'flex', alignItems: 'center', marginTop: "10px"
-    }}>
+    <span
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        marginTop: '10px',
+      }}
+    >
       <Image src={img} alt="labelIgm" />
       <span>{text1}</span>
       <span>{text2}</span>
     </span>
   )
 }
-export function Collection({ index, initialState, dropdownState, setDropdownState }) {
+export function Collection({
+  index,
+  initialState,
+  dropdownState,
+  setDropdownState,
+}) {
   function handleOnClick(e) {
     const temp = !dropdownState[index]
     initialState[index] = temp
     setDropdownState({ ...initialState })
   }
   return (
-    <div style={{
-      padding: '10px 20px 7px 20px', border: '1px solid #EAECF0', marginBottom: '15px', boxShadow: '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
-      borderRadius: '8px', background: '#F6F7F9'
-    }}>
+    <div
+      style={{
+        padding: '10px 20px 7px 20px',
+        border: '1px solid #EAECF0',
+        marginBottom: '15px',
+        boxShadow:
+          '0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06)',
+        borderRadius: '8px',
+        background: '#F6F7F9',
+      }}
+    >
       <TreeView
         aria-label="gmail"
         defaultExpanded={['3']}
         defaultCollapseIcon={<ArrowDropDownIcon />}
         defaultExpandIcon={<ArrowRightIcon />}
         defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{ flexGrow: 1, overflowY: 'auto', width: '100%', height: 'auto', overflowX: 'hidden' }}
-
+        sx={{
+          flexGrow: 1,
+          overflowY: 'auto',
+          width: '100%',
+          height: 'auto',
+          overflowX: 'hidden',
+        }}
       >
         <StyledTreeItem
           nodeId="4"
@@ -173,7 +208,13 @@ export function Collection({ index, initialState, dropdownState, setDropdownStat
         />
         <StyledTreeItem
           nodeId="5"
-          labelText={<CollectionLabelIcon img={labelImg1} text1="Circooles" text2="Version 3" />}
+          labelText={
+            <CollectionLabelIcon
+              img={labelImg1}
+              text1="Circooles"
+              text2="Version 3"
+            />
+          }
           labelIcon={BorderColor}
           labelInfo={<CollectionButtons />}
           color="#1a73e8"
@@ -182,40 +223,52 @@ export function Collection({ index, initialState, dropdownState, setDropdownStat
           style={{
             width: '91%',
             top: !dropdownState[index] ? '-75px' : '',
-            right: "-95px",
-            display: !dropdownState[index] ? 'none' : 'block'
+            right: '-95px',
+            display: !dropdownState[index] ? 'none' : 'block',
           }}
         />
         <StyledTreeItem
           nodeId="6"
-          labelText={<CollectionLabelIcon img={labelImg2} text1="Quotient" text2="Version 3" />}
+          labelText={
+            <CollectionLabelIcon
+              img={labelImg2}
+              text1="Quotient"
+              text2="Version 3"
+            />
+          }
           labelIcon={InfoIcon}
           labelInfo={<CollectionButtons />}
           color="#1a73e8"
           bgColor="#FFFFFF"
           style={{
-            right: "-95px",
+            right: '-95px',
             width: '91%',
             top: !dropdownState[index] ? '-150px' : '',
-            display: !dropdownState[index] ? 'none' : 'block'
+            display: !dropdownState[index] ? 'none' : 'block',
           }}
         />
         <StyledTreeItem
           nodeId="7"
-          labelText={<CollectionLabelIcon img={labelImg1} text1="Circooles" text2="Version 3" />}
+          labelText={
+            <CollectionLabelIcon
+              img={labelImg1}
+              text1="Circooles"
+              text2="Version 3"
+            />
+          }
           labelIcon={ForumIcon}
           labelInfo={<CollectionButtons />}
           color="#1a73e8"
           bgColor="#FFFFFF"
           style={{
-            right: "-95px",
+            right: '-95px',
             width: '91%',
             top: !dropdownState[index] ? '-225px' : '',
-            display: !dropdownState[index] ? 'none' : 'block'
+            display: !dropdownState[index] ? 'none' : 'block',
           }}
         />
         <AddFlowModal state={dropdownState} index={index} />
       </TreeView>
     </div>
-  );
+  )
 }

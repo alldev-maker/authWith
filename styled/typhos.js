@@ -13,7 +13,6 @@ export function LoremContentTypo(props) {
 }
 export function DashboardTitleTypo(props) {
   return <Typography component="h1" variant="h4" style={{
-    width: '135px',
     height: '34px',
     fontFamily: 'Urbanist',
     fontStyle: 'normal',

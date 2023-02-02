@@ -10,7 +10,7 @@
 .avatar {
   display: flex;
   align-items: center;
-  margin-left: -7px
+  margin-left: -7px;
 }
 .main {
   padding: 5rem 0;
@@ -121,14 +121,15 @@
 }
 .greetingTypo {
   width: 100%;
-    padding-top:32px;
-    padding-left:40px;
-    padding-right:20px;
+  padding-top: 32px;
+  padding-left: 40px;
+  padding-right: 20px;
 }
-.greetingTypo span {
-  color:#57D47A;
 
+.greetingTypo span {
+  color: #57d47a;
 }
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

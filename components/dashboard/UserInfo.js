@@ -5,7 +5,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 export function AvartarInfo() {
   return (
     <div style={{ display: 'flex', color: 'rgba(187, 202, 191, 0.85)', background: '#0E1218', alignItems: 'center', padding: '0px 20px', justifyContent: 'space-between' }}>
-      <Avatar alt="Olivia" src="./img/Avatar_user.png" />
+      <Avatar alt="Olivia" src="../img/Avatar_user.png" />
       <UserInfo />
       <LogoutIcon style={{ color: "#667085" }} />
     </div>

@@ -1,16 +1,15 @@
-
-import { createTheme } from '@mui/material/styles';
-import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
-import InputBase from '@mui/material/InputBase';
-import { alpha, styled } from '@mui/material/styles';
-
+import { createTheme } from '@mui/material/styles'
+import MuiDrawer from '@mui/material/Drawer'
+import MuiAppBar from '@mui/material/AppBar'
+import InputBase from '@mui/material/InputBase'
+import { alpha, styled } from '@mui/material/styles'
+import { NativeSelect } from '@mui/material'
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'Urbanist'
-  }
-});
+    fontFamily: 'Urbanist',
+  },
+})
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
   'label + &': {
     marginTop: theme.spacing(3),
@@ -18,8 +17,8 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     borderRadius: 4,
     position: 'relative',
-    marginBottom: "25px",
-    backgroundColor: theme.palette.mode === 'light' ? "#F2F2F2" : '#2b2b2b',
+    marginBottom: '25px',
+    backgroundColor: theme.palette.mode === 'light' ? '#F2F2F2' : '#2b2b2b',
     border: '1px solid #ced4da',
     fontSize: 14,
     width: '100%',
@@ -34,10 +33,9 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
       borderColor: theme.palette.primary.main,
     },
   },
-}));
+}))
 
-
-const drawerWidth = 276;
+const drawerWidth = 276
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -54,38 +52,44 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-}));
+}))
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
-  ({ theme, open }) => ({
-    '& .MuiDrawer-paper': {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: drawerWidth,
+const Drawer = styled(MuiDrawer, {
+  shouldForwardProp: (prop) => prop !== 'open',
+})(({ theme, open }) => ({
+  '& .MuiDrawer-paper': {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    boxSizing: 'border-box',
+    ...(!open && {
+      overflowX: 'hidden',
       transition: theme.transitions.create('width', {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.leavingScreen,
       }),
-      boxSizing: 'border-box',
-      ...(!open && {
-        overflowX: 'hidden',
-        transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
-        },
-      }),
-    },
-  }),
-);
+      width: theme.spacing(7),
+      [theme.breakpoints.up('sm')]: {
+        width: theme.spacing(9),
+      },
+    }),
+  },
+}))
+
+const StyledSelect = styled(NativeSelect)(({ theme }) => ({
+  '&::before': {
+    borderBottom: 0
+  },
+}))
 
 const mdTheme = createTheme({
   typography: {
-    fontFamily: 'Urbanist'
-  }
-});
+    fontFamily: 'Urbanist',
+  },
+})
 
-export { BootstrapInput, theme, mdTheme, Drawer, AppBar }
+export { BootstrapInput, theme, mdTheme, Drawer, AppBar, StyledSelect }
