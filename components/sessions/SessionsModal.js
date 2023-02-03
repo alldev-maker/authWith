@@ -6,19 +6,13 @@ import {
   FormControl,
   Fade,
   Button,
-  Avatar,
   InputLabel,
   Typography,
-  ButtonGroup,
 } from '@mui/material'
-import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import CloseIcon from '@mui/icons-material/Close'
-import BackupIcon from '@mui/icons-material/Backup'
-import CheckIcon from '@mui/icons-material/Check'
-import AddIcon from '@mui/icons-material/Add'
 import { BootstrapInput } from '../../styled/styled'
+import { ButtonTypo } from '../../styled/typhos'
 import { CreateButton } from '../Button'
-import { StyledDivider } from './style'
 
 const style = {
   position: 'absolute',
@@ -28,7 +22,6 @@ const style = {
   padding: '24px 32px',
   gap: '10px',
   width: '621px',
-  height: '740px',
   right: '30px',
   top: '91px',
   background: '#FFFFFF',
@@ -65,7 +58,7 @@ export function SessionModal() {
               }}
             >
               <Typography component="h1" variant="h5">
-                Add Collection
+                Create Session
               </Typography>
               <Button onClick={handleClose}>
                 <CloseIcon />
@@ -74,7 +67,7 @@ export function SessionModal() {
             <FormControl variant="standard" style={{ width: '100%' }}>
               <InputLabel
                 shrink
-                htmlFor="collectionName"
+                htmlFor="sessionName"
                 sx={{
                   fontFamily: 'Urbanist',
                   fontStyle: 'normal',
@@ -84,142 +77,21 @@ export function SessionModal() {
                   color: '#465262',
                 }}
               >
-                Collection Name
+                Session Name
               </InputLabel>
               <BootstrapInput
-                placeholder="E-commerce Franchise"
-                id="collectionName"
+                placeholder="Enter Name"
+                id="sessionName"
                 type="text"
-                style={{ width: '100%' }}
+                style={{
+                  width: '100%',
+                  borderWidth: 0,
+                  backgroundColor: 'transparent',
+                }}
               />
-            </FormControl>
-            <StyledDivider mb={2} />
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-              }}
-            >
-              <Typography
-                component="h1"
-                variant="h5"
-                sx={{
-                  fontFamily: 'Urbanist',
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  fontSize: '20px',
-                  lineHeight: '24px',
-                  color: '#344054',
-                }}
-              >
-                Add Flow
-              </Typography>
-              <Button
-                sx={{
-                  color: '#FF6666',
-                  alignItems: 'center',
-                  background: 'rgba(255, 225, 225, 0.87)',
-                }}
-              >
-                <DeleteOutlinedIcon
-                  sx={{ fontSize: '27px', color: '#FF6666' }}
-                />{' '}
-                Remove Flow
-              </Button>
-            </div>
-            <FormControl variant="standard" style={{ width: '100%' }}>
-              <InputLabel
-                shrink
-                htmlFor="collectionName"
-                sx={{
-                  fontFamily: 'Urbanist',
-                  fontStyle: 'normal',
-                  fontWeight: '600',
-                  fontSize: '14px',
-                  lineHeight: '17px',
-                  color: '#465262',
-                }}
-              >
-                Flow Name
-              </InputLabel>
-              <BootstrapInput
-                placeholder="Enter name"
-                id="collectionName"
-                type="text"
-                style={{ width: '100%' }}
-              />
-            </FormControl>
-            <p>Icon</p>
-            <div style={{ display: 'flex' }}>
-              <Button sx={{ alignItems: 'center', color: '#475467' }}>
-                <BackupIcon />
-              </Button>
-              <div style={{ lineHeight: '2px' }}>
-                <p
-                  style={{
-                    fontFamily: 'Urbanist',
-                    fontStyle: 'normal',
-                    fontWeight: '600',
-                    fontSize: '14px',
-                    color: '#45AA61',
-                  }}
-                >
-                  Click to upload
-                </p>
-                <p
-                  style={{
-                    fontFamily: 'Urbanist',
-                    fonStyle: 'normal',
-                    fontWeight: '400',
-                    fontSize: '12px',
-                    color: '#667085',
-                  }}
-                >
-                  or drag and drop
-                </p>
-              </div>
-            </div>
-            <FormControl>
-              <p style={{ marginBottom: '10px' }}>Primary Color</p>
-              <ButtonGroup
-                sx={{ width: '330px', justifyContent: 'space-between' }}
-              >
-                <Avatar style={{ background: 'red' }} children="" />
-                <Avatar style={{ background: '#F97C1B' }} children="" />
-                <Avatar style={{ background: '#FAC81C' }} children="" />
-                <Avatar
-                  style={{ background: '#165248' }}
-                  children={<CheckIcon />}
-                />
-                <Avatar style={{ background: '#2BAFF6' }} children="" />
-                <Avatar style={{ background: '#6462FB' }} children="" />
-                <Avatar
-                  style={{ background: '#9097A1' }}
-                  children={<AddIcon />}
-                />
-              </ButtonGroup>
-            </FormControl>
-            <FormControl sx={{ marginBottom: '20px' }}>
-              <p style={{ marginBottom: '10px' }}>Secondary Color</p>
-              <ButtonGroup
-                sx={{ width: '330px', justifyContent: 'space-between' }}
-              >
-                <Avatar style={{ background: 'red' }} children="" />
-                <Avatar style={{ background: '#F97C1B' }} children="" />
-                <Avatar style={{ background: '#FAC81C' }} children="" />
-                <Avatar
-                  style={{ background: '#165248' }}
-                  children={<CheckIcon />}
-                />
-                <Avatar style={{ background: '#2BAFF6' }} children="" />
-                <Avatar style={{ background: '#6462FB' }} children="" />
-                <Avatar
-                  style={{ background: '#9097A1' }}
-                  children={<AddIcon />}
-                />
-              </ButtonGroup>
+              <CreateButton onClick={handleOpen}>
+                <ButtonTypo>Create Session</ButtonTypo>
+              </CreateButton>
             </FormControl>
           </Box>
         </Fade>

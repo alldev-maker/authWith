@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRouter } from 'next/router'
+import { useRouter, withRouter } from 'next/router'
 import Container from '../../components/Container'
 import SessionDetailTable from '../../components/sessions/SessionDetailTable'
 
@@ -12,4 +12,4 @@ const SessionDetail = () => {
   )
 }
 
-export default SessionDetail
+export default withRouter(SessionDetail)

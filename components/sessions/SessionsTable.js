@@ -93,14 +93,13 @@ const rows = [
 
 export function SessionsTable() {
   const router = useRouter()
-
   const handleSessionClick = (session, index) => {
     router.push({
-      pathname: `\sessions\\${index}`,
+      pathname: `\sessions\/${index}`,
       query: session,
     })
   }
-
+  
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">

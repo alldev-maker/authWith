@@ -1,5 +1,15 @@
 import React from 'react'
-import { CssBaseline, Drawer } from '@mui/material'
+import {
+  CssBaseline,
+  Drawer,
+  Toolbar,
+  IconButton,
+  Divider,
+  List,
+} from '@mui/material'
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
+import { MainListItems } from './SidebarItems'
+import { AvartarInfo } from '../dashboard/UserInfo'
 
 const SideBar = () => {
   return (

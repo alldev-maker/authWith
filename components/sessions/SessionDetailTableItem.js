@@ -5,13 +5,13 @@ import { styled } from '@mui/material/styles'
 import { StyledTableRow, StyledTableCell } from './style'
 import GalleryIcon from '../../public/svg/gallery.svg'
 
-const StyledTableVisibleRow = styled(StyledTableRow)((props) => ({
-  display: props.isShow ? 'table-row' : 'none',
+const StyledTableVisibleRow = styled(StyledTableRow)(({ show }) => ({
+  display: show ? 'table-row' : 'none',
 }))
 
-const StyledArrowIcon = styled(ArrowRight)(({ isShow }) => ({
+const StyledArrowIcon = styled(ArrowRight)(({ show }) => ({
   transition: '0.5s',
-  transform: isShow ? 'rotate(90deg)' : 'rotate(0)',
+  transform: show ? 'rotate(90deg)' : 'rotate(0)',
 }))
 
 const StyledTableCellItem = styled(StyledTableCell)({
@@ -50,7 +50,7 @@ const SessionDetailTableItem = () => {
     <>
       <StyledTableRow onClick={handleCellClick}>
         <StyledTableCellItem component="th" scope="row">
-          <StyledArrowIcon isShow={isShow} />
+          <StyledArrowIcon show={isShow ? 1 : 0} />
           b8563bb0-9135-4c86-b0e7-a24fa47d4957
         </StyledTableCellItem>
         <StyledTableCell>FlowTest1</StyledTableCell>
@@ -58,7 +58,7 @@ const SessionDetailTableItem = () => {
         <StyledTableCell>09-12-2023, 09:03:23</StyledTableCell>
       </StyledTableRow>
       <Fade in={isShow} timeout={{ enter: 500, exit: 250 }}>
-        <StyledTableVisibleRow isShow={isShow}>
+        <StyledTableVisibleRow show={isShow ? 1 : 0}>
           <StyledTableCellHeader
             component="td"
             scope="row"
@@ -75,9 +75,9 @@ const SessionDetailTableItem = () => {
         <Fade
           in={isShow}
           timeout={{ enter: 500, exit: 250 }}
-          key={item.name + index}
+          key={item.action + index}
         >
-          <StyledTableVisibleRow isShow={isShow}>
+          <StyledTableVisibleRow show={isShow ? 1 : 0}>
             <StyledTableCell
               component="td"
               scope="row"

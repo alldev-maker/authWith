@@ -12,7 +12,7 @@ import ArrowLeft from '../public/svg/arrowLeft.svg'
 const StyledPaginationContainer = styled(Box)(() => ({
   margin: '1rem 0',
   '& .MuiPagination-ul li': {
-    '&:first-child': {
+    '&:first-of-type': {
       marginRight: 'auto',
       marginLeft: '20px'
     },
