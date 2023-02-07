@@ -1,31 +1,33 @@
 import React from 'react'
-import Box from '@mui/material/Box';
-import InputAdornment from '@mui/material/InputAdornment';
-import TextField from '@mui/material/TextField';
-import SearchIcon from '@mui/icons-material/Search';
-import { UserModal } from "./UserModal";
-import { LoremContentTypo, DashboardTitleTypo } from "../../styled/typhos";
+import Box from '@mui/material/Box'
+import InputAdornment from '@mui/material/InputAdornment'
+import TextField from '@mui/material/TextField'
+import SearchIcon from '@mui/icons-material/Search'
+import { UserModal } from './UserModal'
+import { LoremContentTypo, DashboardTitleTypo } from '../../styled/typhos'
 export function UserPageHeader() {
   return (
     <>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }}>
-        <DashboardTitleTypo>
-          Users
-        </DashboardTitleTypo>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}
+      >
+        <DashboardTitleTypo>Users</DashboardTitleTypo>
         <Box
           component="form"
           sx={{
             display: 'flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
           noValidate
           autoComplete="off"
         >
-          <TextField id="outlined-basic"
+          <TextField
+            id="outlined-basic"
+            placeholder="Search"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
@@ -33,7 +35,7 @@ export function UserPageHeader() {
                 </InputAdornment>
               ),
               sx: {
-                marginRight: "20px",
+                marginRight: '20px',
                 display: 'flex',
                 flexDirection: 'row',
                 padding: '10px 14px',
@@ -44,7 +46,7 @@ export function UserPageHeader() {
                 border: ' 1px solid #D0D5DD',
                 boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                 borderRadius: '8px',
-              }
+              },
             }}
           />
           <UserModal />
@@ -53,7 +55,6 @@ export function UserPageHeader() {
       <LoremContentTypo>
         Lorem ipsum dolor sit, amet consectetur ipsum fermentum porttittoe enim
       </LoremContentTypo>
-
     </>
   )
 }

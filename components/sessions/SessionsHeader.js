@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Box, NativeSelect, Select, MenuItem } from '@mui/material'
+import { Typography, Box, Select, MenuItem } from '@mui/material'
 import { ArrowForwardIos } from '@mui/icons-material'
 import { LoremContentTypo, DashboardTitleTypo } from '../../styled/typhos'
 import EditIcon from '../../public/svg/edit.svg'
@@ -9,7 +9,13 @@ import { SessionModal } from './SessionsModal'
 export const SessionsPageHeader = () => {
   return (
     <>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'space-between' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
         <DashboardTitleTypo>Sessions</DashboardTitleTypo>
         <Box
           component="form"
@@ -51,13 +57,25 @@ export const SessionsDetailHeader = ({ data }) => {
           {name}
         </Typography>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'space-between' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <DashboardTitleTypo mr={1}>Session One</DashboardTitleTypo>
           <EditIcon />
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'space-between' }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
         <LoremContentTypo
           sx={{ display: 'flex', alignItems: 'center' }}
           mt={2}

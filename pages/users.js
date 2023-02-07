@@ -1,6 +1,5 @@
 import * as React from 'react'
-import Box from '@mui/material/Box'
-import Divider from '@mui/material/Divider'
+import { Box, Divider, Typography } from '@mui/material'
 import { UserPageHeader } from '../components/users/UserHeader'
 import { LoremContentTypo } from '../styled/typhos'
 import UserDataTable from '../components/users/UserTable'
@@ -28,6 +27,9 @@ function UsersContent() {
             marginBottom: '45px',
           }}
         />
+        <Typography fontSize={14} fontWeight="bold">
+          Admin Users
+        </Typography>
         <LoremContentTypo sx={{ width: '260px', marginBottom: '32px' }}>
           Lorem ipsum dolor sit, amet consectetur ipsum fermentum porttittoe
           enim

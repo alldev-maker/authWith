@@ -10,7 +10,8 @@ import {
   Typography,
 } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import { BootstrapInput } from '../../styled/styled'
+import { styled } from '@mui/material/styles'
+import { StyledInput } from '../../styled/styled'
 import { ButtonTypo } from '../../styled/typhos'
 import { CreateButton } from '../Button'
 
@@ -79,15 +80,10 @@ export function SessionModal() {
               >
                 Session Name
               </InputLabel>
-              <BootstrapInput
+              <StyledInput
                 placeholder="Enter Name"
                 id="sessionName"
                 type="text"
-                style={{
-                  width: '100%',
-                  borderWidth: 0,
-                  backgroundColor: 'transparent',
-                }}
               />
               <CreateButton onClick={handleOpen}>
                 <ButtonTypo>Create Session</ButtonTypo>

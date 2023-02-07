@@ -35,6 +35,13 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
   },
 }))
 
+const StyledInput = styled(BootstrapInput)(() => ({
+  '& .MuiInputBase-input': {
+    borderWidth: 0,
+    backgroundColor: 'transparent',
+  },
+}))
+
 const drawerWidth = 276
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -82,7 +89,7 @@ const Drawer = styled(MuiDrawer, {
 
 const StyledSelect = styled(NativeSelect)(({ theme }) => ({
   '&::before': {
-    borderBottom: 0
+    borderBottom: 0,
   },
 }))
 
@@ -92,4 +99,12 @@ const mdTheme = createTheme({
   },
 })
 
-export { BootstrapInput, theme, mdTheme, Drawer, AppBar, StyledSelect }
+export {
+  BootstrapInput,
+  StyledInput,
+  theme,
+  mdTheme,
+  Drawer,
+  AppBar,
+  StyledSelect,
+}
