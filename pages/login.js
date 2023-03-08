@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -13,12 +11,14 @@ import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
-import { ThemeProvider } from '@mui/material/styles';
+import {ThemeProvider} from '@mui/material/styles';
 import style from '../styles/Home.module.css'
-import { BootstrapInput, theme } from "../styled/styled";
-import { SignupTypo, SignupLeftbarTypo, LabelTypo, ButtonTypo } from "../styled/typhos";
+import {BootstrapInput, theme} from "../styled/styled";
+import {SignupTypo, SignupLeftbarTypo, LabelTypo, ButtonTypo} from "../styled/typhos";
+
+import InputLabel from '../components/InputLabel';
+import AccountImage from "../public/svg/account.svg";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -36,8 +36,18 @@ export default function SignIn() {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: '100vh' }} spacing={0} style={{ maxWidth: '1512px', margin: '0 auto' }}>
+      <Grid
+        container
+        component="main"
+        sx={{height: '100vh'}}
+        spacing={0}
+        style={{
+          maxWidth: '1512px',
+          margin: '0 auto',
+        }}
+      >
         <Grid
+          className={style.mobileInvisible}
           item
           xs={false}
           sm={5}
@@ -46,7 +56,6 @@ export default function SignIn() {
             backgroundImage: 'url(./img/login.png)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#0E1218',
-            backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundSize: 'auto',
             backgroundPositionY: 'bottom',
@@ -57,7 +66,8 @@ export default function SignIn() {
               Welcome Back
             </SignupLeftbarTypo>
             <Typography component="h1" variant="h5" style={{
-              marginLeft: '-15px', fontSize: '15px', color: '#E2DEF7',
+              marginLeft: '-15px',
+              color: '#E2DEF7',
               fontFamily: 'Urbanist',
               fontStyle: 'normal',
               fontWeight: '400',
@@ -68,7 +78,22 @@ export default function SignIn() {
             </Typography>
           </div>
         </Grid>
-        <Grid item xs={12} sm={7} md={8} component={Paper} elevation={6} square style={{ paddingRight: '20px', paddingLeft: '20px' }}>
+        <Grid
+          item
+          xs={12}
+          sm={7}
+          md={8}
+          component={Paper}
+          elevation={6}
+          square
+          style={{
+            paddingRight: '20px',
+            paddingLeft: '20px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}
+        >
           <Box
             sx={{
               my: 3,
@@ -78,21 +103,32 @@ export default function SignIn() {
               alignItems: 'left',
             }}
           >
-            <Typography style={{
-              marginLeft: '-15px', marginBottom: '35px',
-              fontFamily: 'Urbanist',
-              fontStyle: 'normal',
-              fontWeight: '400',
-              fontSize: '16px',
-              lineHeight: '19px',
-            }}> Don &apos;t have an AuthWith account? <Link href="/signup" style={{ color: 'green', textDecoration: 'none' }}>Sign up here</Link></Typography>
+            <Typography
+              className={style.mobileInvisible}
+              style={{
+                marginLeft: '-15px', marginBottom: '35px',
+                fontFamily: 'Urbanist',
+                fontStyle: 'normal',
+                fontWeight: '400',
+                fontSize: '16px',
+                lineHeight: '19px',
+              }}
+            > Don &apos;t have an AuthWith account? <Link href="/signup"
+                                                          style={{color: 'green', textDecoration: 'none'}}>Sign up
+              here</Link></Typography>
 
-            <SignupTypo>
+            <SignupTypo
+              style={{
+                paddingBottom: '12px',
+                borderBottom: '1px solid #E9E9E9',
+                marginLeft: '-15px',
+              }}
+            >
               Sign in
             </SignupTypo>
             <div className={style.avatar}>
-              <Avatar sx={{ m: 1, color: '#3F3F3F', background: 'white', marginLeft: '-20px' }}>
-                <LockOutlinedIcon />
+              <Avatar sx={{m: 1, color: '#3F3F3F', background: 'white', marginLeft: '-20px'}}>
+                <AccountImage/>
               </Avatar>
               <Typography style={{
                 fontFamily: 'Urbanist',
@@ -100,21 +136,20 @@ export default function SignIn() {
                 fontWeight: '600',
                 fontSize: '16px',
                 lineHeight: '19px',
-              }} >Account Information</Typography>
+                marginLeft: '-8px',
+              }}>Account Information</Typography>
             </div>
-            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}  >
-              <Grid container spacing={2} >
-                <Grid xs={12}>
-                  <FormControl variant="standard" style={{ width: '100%', marginBottom: '35px' }}>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{mt: 3}}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} style={{ paddingLeft: '0px'}}>
+                  <FormControl variant="standard" style={{width: '100%', marginBottom: '35px'}}>
                     <InputLabel shrink htmlFor="email">
-                      <LabelTypo>
-                        Business Email Address
-                      </LabelTypo>
+                      Business Email Address
                     </InputLabel>
-                    <BootstrapInput placeholder="loemipsum@gmail.com" id="email" style={{ width: '100%' }} />
+                    <BootstrapInput placeholder="loemipsum@gmail.com" id="email" style={{width: '100%'}}/>
                   </FormControl>
                 </Grid>
-                <Grid xs={12}>
+                <Grid item xs={12} style={{ paddingLeft: '0px'}}>
                   <FormControl variant="outlined" style={{
                     width: '100%',
                     borderRadius: '4px',
@@ -128,12 +163,11 @@ export default function SignIn() {
                       left: '-12px',
                       top: '-13px'
                     }}>
-                      <LabelTypo>
-                        password
-                      </LabelTypo>
+                      Password
                     </InputLabel>
                     <OutlinedInput
                       id="password"
+                      className={style.removeBorder}
                       type={showPassword ? 'text' : 'password'}
                       endAdornment={
                         <InputAdornment position="end">
@@ -142,8 +176,9 @@ export default function SignIn() {
                             onClick={handleClickShowPassword}
                             onMouseDown={handleMouseDownPassword}
                             edge="end"
+                            className={style.passwordView}
                           >
-                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                            {showPassword ? <VisibilityOff style={{fontSize: '15px'}}/> : <Visibility/>}
                           </IconButton>
                         </InputAdornment>
                       }
@@ -153,9 +188,9 @@ export default function SignIn() {
                 </Grid>
               </Grid>
               <Button
-                type="submit"
+                // type="submit"
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{mt: 3, mb: 2}}
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
@@ -166,18 +201,32 @@ export default function SignIn() {
                   background: '#07090D',
                   borderRadius: '4px',
                   marginBottom: '25px',
-                  marginLeft: '-15px'
+                  marginLeft: '-15px',
+                  marginTop: '0px',
                 }}
               >
                 <ButtonTypo>
-                  <Link style={{ textDecoration: 'none', color: 'inherit' }} href="/collections">
-                    Login
+                  <Link style={{textDecoration: 'none', color: 'inherit', textTransform: 'initial'}}
+                        href="/collections">
+                    Log In
                   </Link>
                 </ButtonTypo>
               </Button>
             </Box>
-
           </Box>
+          <Typography
+            className={style.mobileVisible}
+            style={{
+              marginLeft: '-15px', marginBottom: '35px',
+              fontFamily: 'Urbanist',
+              fontStyle: 'normal',
+              fontWeight: '400',
+              fontSize: '16px',
+              lineHeight: '19px',
+            }}
+          > Don &apos;t have an AuthWith account? <Link href="/signup"
+                                                        style={{color: 'green', textDecoration: 'none'}}>Sign up
+            here</Link></Typography>
         </Grid>
       </Grid>
     </ThemeProvider>

@@ -56,8 +56,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 const Android12Switch = styled(Switch)(({ theme }) => ({
   padding: 8,
   marginRight: '20px',
+  '& .MuiSwitch-root': {
+    width: '50px',
+    height: '20px',
+  },
   '& .MuiSwitch-track': {
-    borderRadius: 22 / 2,
+    borderRadius: 42 / 2,
     '&:before, &:after': {
       content: '""',
       position: 'absolute',
@@ -68,23 +72,30 @@ const Android12Switch = styled(Switch)(({ theme }) => ({
 
     },
     '&:before': {
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-        theme.palette.getContrastText(theme.palette.primary.main),
-      )}" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>')`,
+      content: '"on"',
+      // backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
+      //   theme.palette.getContrastText(theme.palette.primary.main),
+      // )}" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>')`,
+      fontSize: '10px',
+      color: '#BDF0CB',
+      textTransform: 'uppercase',
       left: 12,
     },
     '&:after': {
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
-        theme.palette.getContrastText(theme.palette.primary.main),
-      )}" d="M19,13H5V11H19V13Z" /></svg>')`,
+      content: '"off"',
+      // backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 24 24"><path fill="${encodeURIComponent(
+      //   theme.palette.getContrastText(theme.palette.primary.main),
+      // )}" d="M19,13H5V11H19V13Z" /></svg>')`,
+      fontSize: '10px',
+      textTransform: 'uppercase',
+      color: '#9097A1',
       right: 12,
     },
   },
   '& .MuiSwitch-thumb': {
     boxShadow: 'none',
-    width: 16,
-    height: 16,
-    margin: 2,
+    width: 20,
+    height: 20,
   },
 }));
 

@@ -2,7 +2,6 @@ import { Button } from "@mui/material"
 
 export function CreateButton({ onClick, style, ...props }) {
   return <Button variant="contained" onClick={onClick} style={{
-    padding: '0',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

@@ -3,7 +3,6 @@ import Badge from '@mui/material/Badge';
 import { CollectionModal } from "./CollectionModal";
 import { LoremContentTypo, DashboardTitleTypo, ButtonTypo } from "../../styled/typhos";
 
-
 export function BoardHeader() {
   return (
     <>
@@ -15,10 +14,6 @@ export function BoardHeader() {
         <DashboardTitleTypo>
           Collections
           <Badge
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
             style={{
               fontFamily: 'Urbanist',
               fontStyle: 'normal',
@@ -29,13 +24,9 @@ export function BoardHeader() {
               backgroundColor: '#E1FFE9',
               borderRadius: '16px',
               padding: '0 13px',
-              position: 'absolute',
               height: '25px',
-              alignitems: 'center',
-              marginTop: '5px',
+              alignItems: 'center',
               marginLeft: '15px',
-              top: '36px',
-              left: '450px',
             }}
           >
             25 collections
@@ -43,7 +34,14 @@ export function BoardHeader() {
         </DashboardTitleTypo>
         <CollectionModal />
       </div>
-      <LoremContentTypo>
+      <LoremContentTypo style={{
+        marginTop: '5px',
+        color: '#667085',
+        borderBottom: '1px solid #EAECF0',
+        paddingBottom: '20px',
+        fontSize: '14px',
+        fontWeight: '400',
+      }}>
         Lorem ipsum dolor sit, amet consectetur ipsum fermentum porttittoe enim
       </LoremContentTypo>
     </>

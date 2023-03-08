@@ -1,10 +1,10 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import { styled } from '@mui/material/styles'
+import {styled} from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Image from 'next/image'
 import TreeView from '@mui/lab/TreeView'
-import TreeItem, { treeItemClasses } from '@mui/lab/TreeItem'
+import TreeItem, {treeItemClasses} from '@mui/lab/TreeItem'
 import Typography from '@mui/material/Typography'
 import InfoIcon from '@mui/icons-material/Info'
 import ForumIcon from '@mui/icons-material/Forum'
@@ -14,12 +14,17 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import FilterNoneIcon from '@mui/icons-material/FilterNone'
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import BorderColorOutlinedIcon from '@mui/icons-material/BorderColorOutlined'
-import { IOSSwitch } from './Switch'
+import {Android12Switch, IOSSwitch} from './Switch'
+import {Switch} from "@mui/material";
 import labelImg1 from '../img/Avatar.png'
 import labelImg2 from '../img/ee.png'
-import { AddFlowModal } from './FlowAdd'
+import PenIcon from '../../public/svg/pen.svg'
+import DuplicateIcon from '../../public/svg/duplicate.svg';
+import TrashIcon from '../../public/svg/trash.svg';
+import {AddFlowModal} from './FlowAdd'
+import {Link} from '@mui/material';
 
-const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
+const StyledTreeItemRoot = styled(TreeItem)(({theme}) => ({
   color: theme.palette.text.secondary,
   [`& .${treeItemClasses.content}`]: {
     color: theme.palette.text.secondary,
@@ -67,10 +72,10 @@ export const StyledTreeItem = (props) => {
   return (
     <StyledTreeItemRoot
       label={
-        <Box sx={{ display: 'flex', alignItems: 'center', p: 0.5, pr: 0 }}>
+        <Box sx={{display: 'flex', alignItems: 'center', p: 0.5, pr: 0}}>
           <Typography
             variant="body2"
-            sx={{ fontWeight: 'inherit', flexGrow: 1 }}
+            sx={{fontWeight: 'inherit', flexGrow: 1}}
           >
             {labelText}
           </Typography>
@@ -107,44 +112,47 @@ StyledTreeItem.propTypes = {
   labelInfo: PropTypes.object,
   labelText: PropTypes.object.isRequired,
 }
+
 function CollectionButtons() {
   return (
-    <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center' }}>
-      <IOSSwitch sx={{ marginTop: '4px' }} />
-      <FilterNoneIcon
-        style={{ fontSize: '22px', color: '#45AA61', marginTop: '3px' }}
-      />
-      <DeleteOutlinedIcon style={{ fontSize: '27px', color: '#FF6666' }} />
+    <div style={{display: 'flex', fontSize: '20px', alignItems: 'center'}}>
+      <Android12Switch sx={{marginTop: '4px'}}/>
+      <DuplicateIcon style={{width: '20px', height: '20px', marginRight: '28.38px'}}/>
+      <TrashIcon style={{width: '20px', height: '20px'}}/>
     </div>
   )
 }
+
 function CollectionButtonMaster() {
   return (
-    <div style={{ display: 'flex', fontSize: '20px', alignItems: 'center' }}>
-      <FilterNoneIcon style={{ fontSize: '22px', color: '#45AA61' }} />
-      <DeleteOutlinedIcon style={{ fontSize: '27px', color: '#FF6666' }} />
+    <div style={{display: 'flex', fontSize: '20px', alignItems: 'center'}}>
+      <DuplicateIcon style={{width: '20px', height: '20px', marginRight: '28.38px'}}/>
+      <TrashIcon style={{width: '20px', height: '20px'}}/>
     </div>
   )
 }
+
 function CollectionNameIcon() {
   return (
     <span
       style={{
         display: 'flex',
-        alignItems: 'flex-end',
+        alignItems: 'center',
         color: '#212F43',
-        marginTop: '10px',
+        marginTop: '15px',
         marginBottom: '15px',
         borderRadius: '10px',
         width: '100%',
+        fontSize: '18px',
       }}
     >
       Collection Name
-      <BorderColorOutlinedIcon style={{ marginLeft: '15px' }} />
+      <PenIcon style={{marginLeft: '15px'}}/>
     </span>
   )
 }
-function CollectionLabelIcon({ img, text1, text2 }) {
+
+function CollectionLabelIcon({img, text1, text2}) {
   return (
     <span
       style={{
@@ -153,23 +161,27 @@ function CollectionLabelIcon({ img, text1, text2 }) {
         marginTop: '10px',
       }}
     >
-      <Image src={img} alt="labelIgm" />
-      <span>{text1}</span>
-      <span>{text2}</span>
+      <Link href="/collections/quotient" style={{textDecoration: 'none', display: 'flex', alignItems: 'center'}}>
+        <Image src={img} alt="labelIgm" style={{marginRight: '5px'}}/>
+        <span>{text1}</span>
+        <span>{text2}</span>
+      </Link>
     </span>
   )
 }
+
 export function Collection({
-  index,
-  initialState,
-  dropdownState,
-  setDropdownState,
-}) {
+                             index,
+                             initialState,
+                             dropdownState,
+                             setDropdownState,
+                           }) {
   function handleOnClick(e) {
     const temp = !dropdownState[index]
     initialState[index] = temp
-    setDropdownState({ ...initialState })
+    setDropdownState({...initialState})
   }
+
   return (
     <div
       style={{
@@ -185,26 +197,17 @@ export function Collection({
       <TreeView
         aria-label="gmail"
         defaultExpanded={['3']}
-        defaultCollapseIcon={<ArrowDropDownIcon />}
-        defaultExpandIcon={<ArrowRightIcon />}
-        defaultEndIcon={<div style={{ width: 24 }} />}
-        sx={{
-          flexGrow: 1,
-          overflowY: 'auto',
-          width: '100%',
-          height: 'auto',
-          overflowX: 'hidden',
-        }}
+        defaultCollapseIcon={<ArrowDropDownIcon/>}
+        defaultExpandIcon={<ArrowRightIcon/>}
       >
         <StyledTreeItem
           nodeId="4"
-          labelText={<CollectionNameIcon />}
+          labelText={<CollectionNameIcon/>}
           labelIcon={BorderColor}
-          labelInfo={<CollectionButtonMaster />}
+          labelInfo={<CollectionButtonMaster/>}
           color="#1a73e8"
           bgColor="#FFFFFF"
           onClick={handleOnClick}
-          style={{ marginTop: '2px' }}
         />
         <StyledTreeItem
           nodeId="5"
@@ -216,14 +219,14 @@ export function Collection({
             />
           }
           labelIcon={BorderColor}
-          labelInfo={<CollectionButtons />}
+          labelInfo={<CollectionButtons/>}
           color="#1a73e8"
           bgColor="#FFFFFF"
           width="90%"
           style={{
             width: '91%',
             top: !dropdownState[index] ? '-75px' : '',
-            right: '-95px',
+            right: '-85px',
             display: !dropdownState[index] ? 'none' : 'block',
           }}
         />
@@ -237,11 +240,11 @@ export function Collection({
             />
           }
           labelIcon={InfoIcon}
-          labelInfo={<CollectionButtons />}
+          labelInfo={<CollectionButtons/>}
           color="#1a73e8"
           bgColor="#FFFFFF"
           style={{
-            right: '-95px',
+            right: '-85px',
             width: '91%',
             top: !dropdownState[index] ? '-150px' : '',
             display: !dropdownState[index] ? 'none' : 'block',
@@ -257,17 +260,17 @@ export function Collection({
             />
           }
           labelIcon={ForumIcon}
-          labelInfo={<CollectionButtons />}
+          labelInfo={<CollectionButtons/>}
           color="#1a73e8"
           bgColor="#FFFFFF"
           style={{
-            right: '-95px',
+            right: '-85px',
             width: '91%',
             top: !dropdownState[index] ? '-225px' : '',
             display: !dropdownState[index] ? 'none' : 'block',
           }}
         />
-        <AddFlowModal state={dropdownState} index={index} />
+        <AddFlowModal state={dropdownState} index={index}/>
       </TreeView>
     </div>
   )

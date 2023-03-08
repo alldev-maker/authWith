@@ -12,12 +12,12 @@ import Avatar from '@mui/material/Avatar'
 import CloseIcon from '@mui/icons-material/Close'
 import Typography from '@mui/material/Typography'
 import BackupIcon from '@mui/icons-material/Backup'
-import { BootstrapInput, theme } from '../../styled/styled'
-import { ButtonGroup } from '@mui/material'
+import {BootstrapInput, theme} from '../../styled/styled'
+import {ButtonGroup} from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'
 import AddIcon from '@mui/icons-material/Add'
-import { CreateButton } from '../Button'
-import { ButtonTypo } from '../../styled/typhos'
+import {CreateButton} from '../Button'
+import {ButtonTypo} from '../../styled/typhos'
 
 const style = {
   position: 'absolute',
@@ -42,7 +42,7 @@ export function CollectionModal() {
   return (
     <div>
       <CreateButton onClick={handleOpen}>
-        <ButtonTypo>Create Collection</ButtonTypo>
+        <ButtonTypo style={{textTransform: 'initial', fontSize: '16px'}}>Create Collection</ButtonTypo>
       </CreateButton>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -50,10 +50,6 @@ export function CollectionModal() {
         open={open}
         onClose={handleClose}
         closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
       >
         <Fade in={open}>
           <Box sx={style}>
@@ -69,10 +65,10 @@ export function CollectionModal() {
                 Add Collection
               </Typography>
               <Button onClick={handleClose}>
-                <CloseIcon />
+                <CloseIcon/>
               </Button>
             </div>
-            <FormControl variant="standard" style={{ width: '100%' }}>
+            <FormControl variant="standard" style={{width: '100%'}}>
               <InputLabel
                 shrink
                 htmlFor="collectionName"
@@ -91,7 +87,7 @@ export function CollectionModal() {
                 placeholder="E-commerce Franchise"
                 id="collectionName"
                 type="text"
-                style={{ width: '100%' }}
+                style={{width: '100%'}}
               />
             </FormControl>
             <Divider
@@ -132,12 +128,12 @@ export function CollectionModal() {
                 }}
               >
                 <DeleteOutlinedIcon
-                  sx={{ fontSize: '27px', color: '#FF6666' }}
+                  sx={{fontSize: '27px', color: '#FF6666'}}
                 />{' '}
                 Remove Flow
               </Button>
             </div>
-            <FormControl variant="standard" style={{ width: '100%' }}>
+            <FormControl variant="standard" style={{width: '100%'}}>
               <InputLabel
                 shrink
                 htmlFor="collectionName"
@@ -156,15 +152,15 @@ export function CollectionModal() {
                 placeholder="Enter name"
                 id="collectionName"
                 type="text"
-                style={{ width: '100%' }}
+                style={{width: '100%'}}
               />
             </FormControl>
             <p>Icon</p>
-            <div style={{ display: 'flex' }}>
-              <Button sx={{ alignItems: 'center', color: '#475467' }}>
-                <BackupIcon />
+            <div style={{display: 'flex'}}>
+              <Button sx={{alignItems: 'center', color: '#475467'}}>
+                <BackupIcon/>
               </Button>
-              <div style={{ lineHeight: '2px' }}>
+              <div style={{lineHeight: '2px'}}>
                 <p
                   style={{
                     fontFamily: 'Urbanist',
@@ -190,38 +186,38 @@ export function CollectionModal() {
               </div>
             </div>
             <FormControl>
-              <p style={{ marginBottom: '10px' }}>Primary Color</p>
+              <p style={{marginBottom: '10px'}}>Primary Color</p>
               <ButtonGroup
-                sx={{ width: '330px', justifyContent: 'space-between' }}
+                sx={{width: '330px', justifyContent: 'space-between'}}
               >
-                <Avatar style={{ background: 'red' }} />
-                <Avatar style={{ background: '#F97C1B' }} />
-                <Avatar style={{ background: '#FAC81C' }} />
-                <Avatar style={{ background: '#165248' }}>
-                  <CheckIcon />
+                <Avatar style={{background: 'red'}}/>
+                <Avatar style={{background: '#F97C1B'}}/>
+                <Avatar style={{background: '#FAC81C'}}/>
+                <Avatar style={{background: '#165248'}}>
+                  <CheckIcon/>
                 </Avatar>
-                <Avatar style={{ background: '#2BAFF6' }} />
-                <Avatar style={{ background: '#6462FB' }} />
-                <Avatar style={{ background: '#9097A1' }}>
-                  <AddIcon />
+                <Avatar style={{background: '#2BAFF6'}}/>
+                <Avatar style={{background: '#6462FB'}}/>
+                <Avatar style={{background: '#9097A1'}}>
+                  <AddIcon/>
                 </Avatar>
               </ButtonGroup>
             </FormControl>
-            <FormControl sx={{ marginBottom: '20px' }}>
-              <p style={{ marginBottom: '10px' }}>Secondary Color</p>
+            <FormControl sx={{marginBottom: '20px'}}>
+              <p style={{marginBottom: '10px'}}>Secondary Color</p>
               <ButtonGroup
-                sx={{ width: '330px', justifyContent: 'space-between' }}
+                sx={{width: '330px', justifyContent: 'space-between'}}
               >
-                <Avatar style={{ background: 'red' }} />
-                <Avatar style={{ background: '#F97C1B' }} />
-                <Avatar style={{ background: '#FAC81C' }} />
-                <Avatar style={{ background: '#165248' }}>
-                  <CheckIcon />
+                <Avatar style={{background: 'red'}}/>
+                <Avatar style={{background: '#F97C1B'}}/>
+                <Avatar style={{background: '#FAC81C'}}/>
+                <Avatar style={{background: '#165248'}}>
+                  <CheckIcon/>
                 </Avatar>
-                <Avatar style={{ background: '#2BAFF6' }} />
-                <Avatar style={{ background: '#6462FB' }} />
-                <Avatar style={{ background: '#9097A1' }}>
-                  <AddIcon />
+                <Avatar style={{background: '#2BAFF6'}}/>
+                <Avatar style={{background: '#6462FB'}}/>
+                <Avatar style={{background: '#9097A1'}}>
+                  <AddIcon/>
                 </Avatar>
               </ButtonGroup>
             </FormControl>

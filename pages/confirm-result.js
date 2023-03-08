@@ -39,7 +39,6 @@ export default function ConfirmResult() {
             backgroundImage: 'url(./img/login.png)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: '#0E1218',
-            backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundSize: 'auto',
             backgroundPositionY: 'bottom',
